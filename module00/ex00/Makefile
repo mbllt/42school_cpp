@@ -12,17 +12,20 @@ RM=			/bin/rm -rf
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-					$(CC) $(OBJS) -o $(NAME)
+					@echo "Linking $(NAME)"
+					@$(CC) $(OBJS) -o $(NAME)
 
 %.o:		%.cpp
 					@echo "Compiling $<"
-					$(CC) $(FLAGS) -o $@ -c $<
+					@$(CC) $(FLAGS) -o $@ -c $<
 
 clean:
-					$(RM) $(OBJS)
+					@echo "Deleting object files"
+					@$(RM) $(OBJS)
 
 fclean:		clean
-					$(RM) $(NAME)
+					@echo "Deleting executable"
+					@$(RM) $(NAME)
 
 re:			fclean all
 
