@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mballet <mballet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 10:55:30 by mballet           #+#    #+#             */
-/*   Updated: 2021/11/22 12:23:53 by mballet          ###   ########.fr       */
+/*   Created: 2021/11/22 10:55:31 by mballet           #+#    #+#             */
+/*   Updated: 2021/11/22 13:26:10 by mballet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-int	main(void)
-{
-	std::string str;
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include "../includes/contact.class.hpp"
 
-	while (str != "EXIT")
-	{
-		std::cin >> str;
-		if (str == "ADD")
-			std::cout << "I have entered ADD" << std::endl;
-		else if (str == "SEARCH")
-			std::cout << "I have entered SEARCH" << std::endl;
-		else if (str == "EXIT")
-			std::cout << "I have entered EXIT" << std::endl;
-	}
-	return (0);
-}
+class Contact {
+
+	public:
+		Contact(void);
+		~Contact(void);
+
+};
+
+#endif
