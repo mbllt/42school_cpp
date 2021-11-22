@@ -1,9 +1,11 @@
-NAME=		megaphone
+NAME=		phonebook
 
-SRCS=		megaphone.cpp
+SRCS=		phonebook.cpp
 
 CC=			clang++
 FLAGS=		-Wall -Werror -Wextra
+
+INCLUDES=	-I phonebook.hpp
 
 OBJS=		$(SRCS:.cpp=.o)
 
@@ -17,7 +19,7 @@ $(NAME):	$(OBJS)
 
 %.o:		%.cpp
 					@echo "Compiling $<"
-					@$(CC) $(FLAGS) -o $@ -c $<
+					@$(CC) $(FLAGS) $(INCLUDES) -o $@ -c $<
 
 clean:
 					@echo "Deleting object files"
