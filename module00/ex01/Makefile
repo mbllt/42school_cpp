@@ -3,8 +3,9 @@ NAME=			phonebook
 
 #-------------- SRCS
 SRCS_DIR=		srcs
-SRCS_FILES=		phonebook.cpp\
-				contact.class.cpp
+SRCS_FILES=		main.cpp\
+				Contact.class.cpp\
+				Phonebook.class.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 
 
@@ -20,7 +21,9 @@ FLAGS=			-Wall -Werror -Wextra -Iincludes/
 
 #-------------- INCS
 INCS_DIR=		includes
-INCS_FILES=		phonebook.hpp contact.class.hpp
+INCS_FILES=		main.hpp\
+				Contact.class.hpp\
+				Phonebook.class.hpp
 INCLUDES=		$(addprefix $(INCS_DIR)/,$(INCS_FILES))
 
 #-------------- RM
