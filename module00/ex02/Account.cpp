@@ -105,9 +105,9 @@ bool Account::makeWithdrawal (int withdrawal) {
 	return (true);
 }
 
-//
 int Account::checkAmount (void) const {
 
+	std::cout << this->_amount << std::endl;
 	return (0);
 }
 
