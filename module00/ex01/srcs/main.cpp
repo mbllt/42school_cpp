@@ -1,55 +1,108 @@
-#include "../includes/main.hpp"
+#include "main.hpp"
+
+Contact	fill_contact(int i)
+{
+	Contact	contact;
+	std::string input;
+
+	std::cout << "Firstname : ";
+	std::cin >> input;
+	if (input.empty())
+		input = " ";
+	contact.set_firstname(input);
+	std::cout << "Lastname : ";
+	std::cin >> input;
+	if (input.empty())
+		input = " ";
+	contact.set_lastname(input);
+	std::cout << "Nickname : ";
+	std::cin >> input;
+	if (input.empty())
+		input = " ";
+	contact.set_nickname(input);
+	std::cout << "Phone number : ";
+	std::cin >> input;
+	if (input.empty())
+		input = " ";
+	contact.set_phonenum(input);
+	std::cout << "Darkest secret : ";
+	std::cin >> input;
+	if (input.empty())
+		input = " ";
+	contact.set_darkest_secret(input);
+	std::cout << "Contact registered sucessfully" << std::endl;
+	
+	contact.index = i;
+	return contact;
+}
+
+bool	valid_str(std::string str)
+{
+	for (unsigned long int i = 0; i < str.length(); i++)
+	{
+		if (!isdigit(str[i]) || str[0] == '-')
+			return (false);
+	}	
+	return (true);
+}
+
+bool	valid_tmp(long int tmp)
+{
+	if (tmp > 2147483648 || tmp < -2147483649)
+		return (false);
+	return (true);
+}
+
 
 int	main(void)
 {
+	int i = -1;
 	std::string str;
 	Phonebook	phonebook;
 
+	std::cout << "Hi, you've entered this brand new phonebook manager" << std::endl;
+	std::cout << "You can navigate throught it with either the ADD, SEARCH or EXIT command" << std::endl;
 	while (str != "EXIT")
 	{
-		int i = 0;
+		std::cout << "> ";
 		std::cin >> str;
 		if (str == "ADD")
 		{
-			std::string input;
-
-			std::cout << "Firstname : " << std::endl;
-			std::cin >> input;
-			phonebook.contact[i].set_firstname(input);
-			std::cout << "Lastname : " << std::endl;
-			std::cin >> input;
-			phonebook.contact[i].set_lastname(input);
-			std::cout << "Nickname : " << std::endl;
-			std::cin >> input;
-			phonebook.contact[i].set_nickname(input);
-			std::cout << "Phone number : " << std::endl;
-			std::cin >> input;
-			phonebook.contact[i].set_phonenum(input);
-			std::cout << "Darkest secret : " << std::endl;
-			std::cin >> input;
-			phonebook.contact[i].set_darkest_secret(input);
+			if (i == -1)
+				i = 0;
+			phonebook.set_contact(fill_contact(i), i);
 			i++;
 			if (i == 8)
 				i = 0;
 		}
 		else if (str == "SEARCH")
 		{
-			for (int i = 0; i < 8; i++)
+			if (i == -1)
+				continue ;
+			phonebook.print_contacts();
+			int tmp = -1;
+
+//	check long ca boucle infinit et pareil avec ctr_d
+			while (tmp < 0 || tmp >= i)
 			{
-				// std::string tmp = phonebook.contact[i].get_firstname();
-				// if (tmp)
-				// {
-					std::cout << phonebook.contact[i].get_firstname() << std::endl;
-					std::cout << phonebook.contact[i].get_lastname() << std::endl;
-					std::cout << phonebook.contact[i].get_nickname() << std::endl;
-					std::cout << phonebook.contact[i].get_phonenum() << std::endl;
-					std::cout << phonebook.contact[i].get_darkest_secret() << std::endl;
-				// }
+				std::string str;
+				std::cout << "Choose a valid index : ";
+				std::cin >> str;
+				if (str.empty())
+					return (0);
+				if (!valid_str(str))
+					continue;
+				tmp = atol(str.c_str());
 			}
+			phonebook.print_contact(tmp);
 		}
 		else if (str == "EXIT")
 		{
-			std::cout << "I have entered EXIT" << std::endl;
+			continue;
+		}
+		else if (str.empty())
+		{
+			return (0);
 		}
 		else
 		{

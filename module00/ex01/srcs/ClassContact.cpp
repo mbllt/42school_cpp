@@ -1,7 +1,8 @@
-#include "../includes/main.hpp"
+#include "main.hpp"
 
 Contact::Contact (void) {
 
+	this->index = 0;
 	return;
 
 }

@@ -4,8 +4,8 @@ NAME=			phonebook
 #-------------- SRCS
 SRCS_DIR=		srcs
 SRCS_FILES=		main.cpp\
-				Contact.class.cpp\
-				Phonebook.class.cpp
+				ClassContact.cpp\
+				ClassPhonebook.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 
 
@@ -15,15 +15,15 @@ OBJS=			$(addprefix $(OBJS_DIR)/,$(SRCS_FILES:.cpp=.o))
 PATH_OBJS=		
 
 #-------------- COMPILER
-CC=				clang++
+CC=				c++
 FLAGS=			-Wall -Werror -Wextra -Iincludes/
 
 
 #-------------- INCS
 INCS_DIR=		includes
 INCS_FILES=		main.hpp\
-				Contact.class.hpp\
-				Phonebook.class.hpp
+				ClassContact.hpp\
+				ClassPhonebook.hpp
 INCLUDES=		$(addprefix $(INCS_DIR)/,$(INCS_FILES))
 
 #-------------- RM
