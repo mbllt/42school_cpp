@@ -24,19 +24,32 @@ void	Phonebook::set_contact (Contact const contact, int const i) {
 
 void	Phonebook::print_contact (int const i) const {
 
-	std::cout << this->_contact[i].get_firstname() << std::endl;
-	std::cout << this->_contact[i].get_lastname() << std::endl;
-	std::cout << this->_contact[i].get_nickname() << std::endl;
-	std::cout << this->_contact[i].get_phonenum() << std::endl;
-	std::cout << this->_contact[i].get_darkest_secret() << std::endl;
+	std::cout << "Firstname : " << this->_contact[i].get_firstname() << std::endl;
+	std::cout << "Lastname : " << this->_contact[i].get_lastname() << std::endl;
+	std::cout << "Nickname : " << this->_contact[i].get_nickname() << std::endl;
+	std::cout << "Phone number : " << this->_contact[i].get_phonenum() << std::endl;
+	std::cout << "Darkest secret : " << this->_contact[i].get_darkest_secret() << std::endl;
 	return;
 }
 
 void	Phonebook::print_contacts (void) const {
 
-	for (int i = 0; i < 42; i++)
+	for (int i = 0; i < 43; i++)
 		std::cout << "_";
 	std::cout << "\n";
+	std::cout << "|";
+	std::cout << std::setw(9);
+	std::cout << "Index";
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << "Firstname";
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << "Lastname";
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << "Nickname";
+	std::cout << "|" << std::endl;
 	for (int i = 0; i < 8; i++)
 	{
 		std::string tmp;

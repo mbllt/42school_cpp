@@ -53,6 +53,19 @@ bool	valid_tmp(long int tmp)
 	return (true);
 }
 
+int	nbr_contact(Phonebook phonebook)
+{
+	int i = 0;
+	Contact tmp;
+	std::string tmp_bis = "begin";
+	while (!tmp_bis.empty() && i < 8)
+	{
+		tmp = phonebook.get_contact(i);
+		tmp_bis = tmp.get_firstname();
+		i++;
+	}
+	return (i);
+}
 
 int	main(void)
 {
@@ -80,11 +93,11 @@ int	main(void)
 			if (i == -1)
 				continue ;
 			phonebook.print_contacts();
+			int nbr = nbr_contact(phonebook);
 			int tmp = -1;
-
-//	check long ca boucle infinit et pareil avec ctr_d
-			while (tmp < 0 || tmp >= i)
+			while (tmp < 0 || tmp >= nbr)
 			{
+				std::cout << "nbr :" << nbr << std::endl;
 				std::string str;
 				std::cout << "Choose a valid index : ";
 				std::cin >> str;
