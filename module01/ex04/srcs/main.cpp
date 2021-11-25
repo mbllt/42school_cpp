@@ -27,7 +27,7 @@ std::string replace(std::string buffer, std::string s1, std::string s2)
 			break;
 		else
 		{
-			buffer.erase(index, s2.size());
+			buffer.erase(index, s1.size());
 			buffer.insert(index, s2);
 			index += s2.size();
 		}
