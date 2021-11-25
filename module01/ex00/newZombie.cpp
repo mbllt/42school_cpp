@@ -1,9 +1,8 @@
-#include "zombie.hpp"
-#include <cstdlib>
-#include <string>
+#include "Zombie.hpp"
 
-Zombie* newZombie( std::string name )
-{
-	Zombie	newZombie;
-	return (newZombie);
-}
+Zombie*	newZombie (std::string name) {
+
+	Zombie* pseudo = new Zombie(name);
+	// pseudo->announce();
+	return pseudo;
+} 

@@ -1,8 +1,8 @@
-#include "zombie.hpp"
-#include <cstdlib>
-#include <string>
+#include "Zombie.hpp"
 
-void randomChump( std::string name )
-{
-	return;
+void	randomChump (std::string name) {
+
+	Zombie pseudo(name);
+	pseudo.announce();
+	return ;
 }
