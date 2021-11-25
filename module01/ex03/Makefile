@@ -1,11 +1,11 @@
 #-------------- NAME
-NAME=			zombie
+NAME=			war
 
 #-------------- SRCS
 SRCS=			main.cpp\
-				Zombie.cpp\
-				newZombie.cpp\
-				randomChump.cpp
+				Weapon.cpp\
+				HumanA.cpp\
+				HumanB.cpp
 
 #-------------- OBJS
 OBJS_DIR=		.objs
@@ -17,7 +17,9 @@ FLAGS=			-Wall -Werror -Wextra -Iincludes/
 
 
 #-------------- INCS
-INCLUDES=		Zombie.hpp
+INCLUDES=		Weapon.hpp\
+				HumanA.hpp\
+				HumanB.hpp
 
 #-------------- RM
 RM=				/bin/rm -rf
@@ -48,4 +50,3 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		all clean fclean re
-

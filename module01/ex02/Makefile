@@ -1,11 +1,8 @@
 #-------------- NAME
-NAME=			zombie
+NAME=			brain
 
 #-------------- SRCS
-SRCS=			main.cpp\
-				Zombie.cpp\
-				newZombie.cpp\
-				randomChump.cpp
+SRCS=			main.cpp
 
 #-------------- OBJS
 OBJS_DIR=		.objs
@@ -13,11 +10,11 @@ OBJS=			$(addprefix $(OBJS_DIR)/,$(SRCS:.cpp=.o))
 
 #-------------- COMPILER
 CC=				clang++
-FLAGS=			-Wall -Werror -Wextra -Iincludes/
+FLAGS=			-Wall -Werror -Wextra
 
 
 #-------------- INCS
-INCLUDES=		Zombie.hpp
+#INCLUDES=
 
 #-------------- RM
 RM=				/bin/rm -rf
@@ -29,7 +26,7 @@ $(NAME):	$(OBJS)
 					@echo "Linking $(NAME)"
 					@$(CC) $(OBJS) -o $(NAME)
 
-$(OBJS_DIR)/%.o:	%.cpp $(INCLUDES) | $(OBJS_DIR)
+$(OBJS_DIR)/%.o:	%.cpp | $(OBJS_DIR)
 					@echo "Compiling $<"
 					@$(CC) $(FLAGS) -o $@ -c $<
 
@@ -48,4 +45,3 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		all clean fclean re
-

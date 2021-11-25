@@ -1,11 +1,10 @@
 #-------------- NAME
-NAME=			zombie
+NAME=			zombieHorde
 
 #-------------- SRCS
 SRCS=			main.cpp\
 				Zombie.cpp\
-				newZombie.cpp\
-				randomChump.cpp
+				ZombieHorde.cpp
 
 #-------------- OBJS
 OBJS_DIR=		.objs
@@ -48,4 +47,3 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		all clean fclean re
-
