@@ -31,7 +31,6 @@ std::string replace(std::string buffer, std::string s1, std::string s2)
 			buffer.insert(index, s2);
 			index += s2.size();
 		}
-		std::cout << buffer <<std::endl;
 	}
 	return (buffer);
 }
