@@ -30,4 +30,4 @@ void Fixed::setRawBits(int const raw) {
 	_rawBits = raw;
 }
 
-int const Fixed::_nbBits = 0;
+int const Fixed::_nbBits = 8;
