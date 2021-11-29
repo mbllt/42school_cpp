@@ -2,11 +2,17 @@
 
 ClapTrap::ClapTrap(void) {
 	std::cout << "Constructing ClapTrap" << std::endl;
+	_hitPoints = 10;
+	_eneryPoints = 10;
+	_attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(std::string name) {
+	std::cout << "Constructing ClapTrap : " << name << std::endl;
 	_name = name;
-	std::cout << "Constructing ClapTrap : " << _name << std::endl;
+	_hitPoints = 10;
+	_eneryPoints = 10;
+	_attackDamage = 0;
 }
 
 ClapTrap::~ClapTrap(void) {
@@ -19,21 +25,21 @@ std::string ClapTrap::getName(void) {
 
 void ClapTrap::attack(std::string const & target) {
 
-	std::cout << "ClapTrap : " << _name << "attack " << target.getName()
+	std::cout << "ClapTrap : " << _name << "attacks " << target.getName()
 			<< ", causing " << _attackDamage << " points of damage." << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	
 	_eneryPoints -= amount;
-	std::cout << "ClapTrap : " << _name << "has attacken " << amount
-				<< " points of damage. Energy points : "
+	std::cout << "ClapTrap : " << _name << "has been attacked " << amount
+				<< " points of damage. Current energy points : "
 				<< _eneryPoints << "." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	_eneryPoints += amount;
 	std::cout << "ClapTrap : " << _name << "has regained " << amount
-				<< " points of energy. Energy points : "
+				<< " points of energy. Current energy points : "
 				<< _eneryPoints << "." << std::endl;
 }
