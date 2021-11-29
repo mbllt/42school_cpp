@@ -30,64 +30,76 @@ Fixed & Fixed::operator=(Fixed const & src) {
 	return *this;
 }
 
-Fixed Fixed::operator+(Fixed const & src) const {
-	return Fixed(_rawBits + src.getRawBits());
+Fixed Fixed::operator+(Fixed const & src) {
+	return Fixed(toFloat() + src.toFloat());
 }
 
-Fixed& Fixed::operator++(void) {
+Fixed& Fixed::operator++(void) {	// prefix
 	_rawBits++;
 	return *this;
 }
 
-Fixed Fixed::operator-(Fixed const & src) const {
-	return Fixed(_rawBits - src.getRawBits());
+Fixed Fixed::operator++(int) {		// postfix
+	Fixed tmp(*this);
+	_rawBits++;
+	return tmp;
 }
 
-Fixed& Fixed::operator--(void) {
+Fixed Fixed::operator-(Fixed const & src) {
+	return Fixed(toFloat() - src.toFloat());
+}
+
+Fixed& Fixed::operator--(void) {	// prefix
 	_rawBits--;
 	return *this;
 }
 
-Fixed Fixed::operator*(Fixed const & src) const {
-	return Fixed(_rawBits * src.getRawBits());
+Fixed Fixed::operator--(int) {		// postfix
+	Fixed tmp(*this);
+	_rawBits--;
+	return tmp;
 }
 
-Fixed Fixed::operator/(Fixed const & src) const {
-	return Fixed(_rawBits / src.getRawBits());
+Fixed Fixed::operator*(Fixed const & src) {
+	return Fixed(toFloat() * src.toFloat());
 }
 
-bool operator<(Fixed const & src) {
-	if (_rawBits < srcs.getRawBits())
+Fixed Fixed::operator/(Fixed const & src) {
+	return Fixed(toFloat() / src.toFloat());
+}
+
+bool Fixed::operator<(Fixed const & src) const {
+	if (_rawBits < src.getRawBits())
 		return true;
 	return false;
 }
 
-bool operator<=(Fixed const & src) {
-	if (_rawBits <= srcs.getRawBits())
+bool Fixed::operator<=(Fixed const & src) const {
+	if (_rawBits <= src.getRawBits())
 		return true;
 	return false;
 }
 
-bool operator>(Fixed const & src) {
-	if (_rawBits > srcs.getRawBits())
+bool Fixed::operator>(Fixed const & src) const {
+	if (_rawBits > src.getRawBits())
 		return true;
 	return false;
 }
 
-bool operator>=(Fixed const & src) {
-	if (_rawBits >= srcs.getRawBits())
+bool Fixed::operator>=(Fixed const & src) const {
+	if (_rawBits >= src.getRawBits())
 		return true;
 	return false;
 }
 
-bool operator==(Fixed const & src) {
-	if (_rawBits == srcs.getRawBits())
+bool Fixed::operator==(Fixed const & src) const {
+	if (_rawBits == src.getRawBits())
 		return true;
 	return false;
 }
 
-bool operator!=(Fixed const & src) {
-	if (_rawBits != srcs.getRawBits())
+bool Fixed::operator!=(Fixed const & src) const {
+	if (_rawBits != src.getRawBits())
 		return true;
 	return false;
 }
@@ -110,10 +122,22 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat(void) const {
-	return (double)_rawBits / (double)(1 << _nbBits);
+	return(double)_rawBits / (double)(1 << _nbBits);
 }
 
 int Fixed::toInt(void) const {
 	return (double)_rawBits / (double)(1 << _nbBits);
+}
+
+Fixed Fixed::min(Fixed const fixed1, Fixed const fixed2){
+	if (fixed1.getRawBits() < fixed2.getRawBits())
+		return (fixed1);
+	return (fixed2);
+}
+
+Fixed Fixed::max(Fixed const fixed1, Fixed const fixed2){
+	if (fixed1.getRawBits() > fixed2.getRawBits())
+		return (fixed1);
+	return (fixed2);
 }
 // ------------------------------------------

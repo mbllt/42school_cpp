@@ -17,16 +17,26 @@ class Fixed {
 		~Fixed ();
 
 		Fixed&				operator=(Fixed const & src);
-		Fixed				operator+(Fixed const & src) const;
-		Fixed				operator-(Fixed const & src) const;
-		Fixed				operator*(Fixed const & src) const;
-		Fixed				operator/(Fixed const & src) const;
+		Fixed				operator+(Fixed const & src);
+		Fixed&				operator++(void);
+		Fixed				operator++(int);
+		Fixed				operator-(Fixed const & src);
+		Fixed&				operator--(void);
+		Fixed				operator--(int);
+		Fixed				operator*(Fixed const & src);
+		Fixed				operator/(Fixed const & src);
+		bool				operator<(Fixed const & src) const;
+		bool				operator<=(Fixed const & src) const;
+		bool				operator>(Fixed const & src) const;
+		bool				operator>=(Fixed const & src) const;
+		bool				operator==(Fixed const & src) const;
+		bool				operator!=(Fixed const & src) const;
 		int					getRawBits(void) const;
 		void				setRawBits(int const raw);
 		float				toFloat(void) const;
 		int					toInt(void) const;
-		Fixed&				min(Fixed const fixed1, Fixed const fixed2) const;
-		Fixed&				max(Fixed const fixed1, Fixed const fixed2) const;
+		static Fixed		min(Fixed const fixed1, Fixed const fixed2);
+		static Fixed		max(Fixed const fixed1, Fixed const fixed2);
 
 
 	private:
@@ -38,11 +48,5 @@ class Fixed {
 };
 
 std::ostream&		operator<<(std::ostream & o, Fixed const & src);
-std::ostream&		operator<(std::ostream & o, Fixed const & src);
-std::ostream&		operator<=(std::ostream & o, Fixed const & src);
-std::ostream&		operator>(std::ostream & o, Fixed const & src);
-std::ostream&		operator>=(std::ostream & o, Fixed const & src);
-std::ostream&		operator==(std::ostream & o, Fixed const & src);
-std::ostream&		operator!=(std::ostream & o, Fixed const & src);
 
 #endif
