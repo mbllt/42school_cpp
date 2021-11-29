@@ -34,8 +34,18 @@ Fixed Fixed::operator+(Fixed const & src) const {
 	return Fixed(_rawBits + src.getRawBits());
 }
 
+Fixed& Fixed::operator++(void) {
+	_rawBits++;
+	return *this;
+}
+
 Fixed Fixed::operator-(Fixed const & src) const {
 	return Fixed(_rawBits - src.getRawBits());
+}
+
+Fixed& Fixed::operator--(void) {
+	_rawBits--;
+	return *this;
 }
 
 Fixed Fixed::operator*(Fixed const & src) const {
