@@ -5,6 +5,16 @@
 #include <cstdlib>
 #include <iostream>
 
+//-------Classe canonique--------
+//
+//	Une classe canonique c'est juste une classe qui a les méthodes(fonctions) suivantes :
+//
+//		.Un constructeur par défaut
+//		.Un constructeur pas copie
+//		.Un destructeur éventuellement virtuel
+//		.Une surcharge d'operateur =
+//
+
 class Fixed {
 
 	public:

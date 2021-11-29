@@ -12,11 +12,11 @@ Fixed::Fixed (Fixed const& cpy) {
 }
 
 Fixed::Fixed (int const i) {
-	_rawBits = (double)i * (double)(1 << _nbBits);
+	_rawBits = (float)i * (float)(1 << _nbBits);
 }
 
 Fixed::Fixed (float const f) {
-	_rawBits = (double)f * (double)(1 << _nbBits);
+	_rawBits = roundf(f * (float)(1 << _nbBits));
 }
 
 Fixed::~Fixed (void) {
@@ -122,11 +122,11 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat(void) const {
-	return(double)_rawBits / (double)(1 << _nbBits);
+	return (float)_rawBits / (float)(1 << _nbBits);
 }
 
 int Fixed::toInt(void) const {
-	return (double)_rawBits / (double)(1 << _nbBits);
+	return (float)_rawBits / (float)(1 << _nbBits);
 }
 
 Fixed Fixed::min(Fixed const fixed1, Fixed const fixed2){
