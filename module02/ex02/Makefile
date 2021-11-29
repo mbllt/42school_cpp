@@ -1,5 +1,5 @@
 #-------------- NAME
-NAME=			floatint
+NAME=			operators
 
 #-------------- SRCS
 SRCS=			main.cpp\
