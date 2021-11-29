@@ -24,13 +24,12 @@ std::string ClapTrap::getName(void) {
 }
 
 void ClapTrap::attack(std::string const & target) {
-
+	target.takeDamage(_hitPoints);
 	std::cout << "ClapTrap : " << _name << "attacks " << target.getName()
 			<< ", causing " << _attackDamage << " points of damage." << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	
 	_eneryPoints -= amount;
 	std::cout << "ClapTrap : " << _name << "has been attacked " << amount
 				<< " points of damage. Current energy points : "
