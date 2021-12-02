@@ -2,13 +2,13 @@
 
 //-----Constructors/Destructors----
 ClapTrap::ClapTrap(void)
-	: _hitPoints(100), _energyPoints(50), _attackDamage(20) {
+	: _hitPoints(100), _energyPoints(100), _attackDamage(30) {
 	std::cout << "Constructing ClapTrap" << std::endl;
 	(void)_energyPoints;
 }
 
 ClapTrap::ClapTrap(std::string name)
-	: _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20) {
+	: _name(name), _hitPoints(100), _energyPoints(100), _attackDamage(30) {
 	std::cout << "Constructing ClapTrap : " << name << std::endl;
 }
 

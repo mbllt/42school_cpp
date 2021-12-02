@@ -1,11 +1,12 @@
 #-------------- NAME-----------------
-NAME=			serena
+NAME=			repetitive
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
 SRCS_FILES=		main.cpp\
 				ClapTrap.cpp\
-				ScavTrap.cpp
+				ScavTrap.cpp\
+				FragTrap.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 
 #-------------- OBJS------------------
@@ -21,7 +22,8 @@ FLAGS=			-Wall -Werror -Wextra -Iincludes/
 INC_DIR=		includes
 INC_FILES=		main.hpp\
 				ClapTrap.hpp\
-				ScavTrap.hpp
+				ScavTrap.hpp\
+				FragTrap.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 
 #-------------- RM---------------------
