@@ -1,5 +1,5 @@
 #-------------- NAME-----------------
-NAME=			operators
+NAME=			serena
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs

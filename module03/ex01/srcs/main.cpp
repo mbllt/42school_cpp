@@ -1,4 +1,5 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main()
 {
@@ -14,6 +15,17 @@ int	main()
 
 	Claire.attack(Leo.getName());
 	Leo.takeDamage(Claire.getAttackDamage());
+	std::cout << "\n";
+
+	ScavTrap Mia("Mia");
+	ScavTrap Esteban("Esteban");
+	std::cout << "\n";
+
+	Mia.attack(Leo.getName());
+	Leo.takeDamage(Mia.getAttackDamage());
+	Claire.attack(Esteban.getName());
+	Esteban.takeDamage(Claire.getAttackDamage());
+	Esteban.guardGate();
 	std::cout << "\n";
 	return 0;
 }

@@ -1,31 +1,24 @@
-#ifndef CLAP_TRAP_HPP
-#define CLAP_TRAP_HPP
+#ifndef SCAV_TRAP_HPP
+#define SCAV_TRAP_HPP
 
 #include <iostream>
 #include <string>
 
-class ClapTrap {
+class ScavTrap : public ClapTrap {
 
 	public:
 		
-		ClapTrap(void);
-		ClapTrap(std::string name);
-		~ClapTrap(void);
+		ScavTrap(void);
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const& cpy);
+		~ScavTrap(void);
+
+		ScavTrap&		operator=(ScavTrap const & src);
 
 		void			attack(std::string const & target);
-		void			takeDamage(unsigned int amount);
-		void			beRepaired(unsigned int amount);
-
-		std::string		getName(void);
-		unsigned int	getAttackDamage(void);
-
+		void			guardGate();
 
 	private:
-
-		std::string		_name;
-		unsigned int	_hitPoints; // HP
-		unsigned int	_eneryPoints;
-		unsigned int	_attackDamage;
 
 
 };
