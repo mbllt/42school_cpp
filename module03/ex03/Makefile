@@ -1,5 +1,5 @@
 #-------------- NAME-----------------
-NAME=			repetitive
+NAME=			diamond
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
@@ -17,7 +17,7 @@ OBJS=			$(addprefix $(OBJS_DIR)/,$(SRCS_FILES:.cpp=.o))
 
 #-------------- COMPILER--------------
 CC=				clang++
-FLAGS=			-Wall -Werror -Wextra -Iincludes/
+FLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -Iincludes/
 
 
 #-------------- INCS------------------

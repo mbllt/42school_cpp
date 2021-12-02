@@ -33,7 +33,7 @@ class ClapTrap {
 		void			setAttackDamage (int nb);
 
 
-	private:
+	protected:
 
 		std::string		_name;
 		unsigned int	_hitPoints; // HP

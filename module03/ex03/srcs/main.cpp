@@ -38,5 +38,11 @@ int	main()
 	Hugo.attack(Mathis.getName());
 	Mathis.takeDamage(Hugo.getAttackDamage());
 	std::cout << "\n";
+
+	DiamondTrap Voldemort("Voldemort");
+	std::cout << "\n";
+
+	Voldemort.whoAmI();
+	std::cout << "\n";
 	return 0;
 }
