@@ -9,11 +9,14 @@ int	main()
 
 	Leo.attack(Drake.getName());
 	Drake.takeDamage(Leo.getAttackDamage());
+	std::cout << "\n";
+
+	ClapTrap Harry(Drake);
+	std::cout << "\n";
 
 	Zoro.beRepaired(3);
-
-	Zoro.attack(Leo.getName());
-	Leo.takeDamage(Zoro.getAttackDamage());
+	Zoro.attack(Harry.getName());
+	Harry.takeDamage(Zoro.getAttackDamage());
 	std::cout << "\n";
 
 	ScavTrap Mia("Mia");
@@ -42,6 +45,11 @@ int	main()
 	DiamondTrap Voldemort("Voldemort");
 	std::cout << "\n";
 
+	std::cout << "Voldemort energy points : " << Voldemort.getEnergyPoints() << "." << std::endl;
+	Hugo.attack(Voldemort.getName());
+	Voldemort.takeDamage(Hugo.getAttackDamage());
+	Voldemort.attack(Drake.getName());
+	Drake.takeDamage(Voldemort.getAttackDamage());
 	Voldemort.whoAmI();
 	std::cout << "\n";
 	return 0;

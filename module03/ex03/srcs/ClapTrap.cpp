@@ -1,18 +1,23 @@
 #include "main.hpp"
 
 //-----Constructors/Destructors----
-ClapTrap::ClapTrap(void)
-	: _hitPoints(100), _energyPoints(100), _attackDamage(30) {
+ClapTrap::ClapTrap(void) {
 	std::cout << "Constructing ClapTrap" << std::endl;
-	(void)_energyPoints;
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
 }
 
-ClapTrap::ClapTrap(std::string name)
-	: _name(name), _hitPoints(100), _energyPoints(100), _attackDamage(30) {
+ClapTrap::ClapTrap(std::string name) {
 	std::cout << "Constructing ClapTrap : " << name << std::endl;
+	_name = name;
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
 }
 
 ClapTrap::ClapTrap (ClapTrap const& cpy) {
+	std:: cout << "Copy constructor called" << std::endl;
 	*this = cpy;
 }
 
@@ -24,7 +29,7 @@ ClapTrap::~ClapTrap(void) {
 
 //-----------Operators------------
 ClapTrap & ClapTrap::operator=(ClapTrap const & src) {
-
+	std::cout << "Assignment operator called in ClapTrap." << std::endl;
 	_name = src.getName();
 	_hitPoints = src.getHitPoints();
 	_energyPoints = src.getHitPoints();

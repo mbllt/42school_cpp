@@ -3,14 +3,21 @@
 //-----Constructors/Destructors----
 ScavTrap::ScavTrap(void) {
 	std::cout << "Constructing ScavTrap" << std::endl;
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) {
 	std::cout << "Constructing ScavTrap : " << name << std::endl;
 	setName(name);
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap (ScavTrap const& cpy) {
+	std:: cout << "Copy constructor called" << std::endl;
 	*this = cpy;
 }
 
@@ -22,7 +29,11 @@ ScavTrap::~ScavTrap(void) {
 
 //-----------Operators------------
 ScavTrap & ScavTrap::operator=(ScavTrap const & src) {
-	(void)src;
+	std::cout << "Assignment operator called in ScavTrap." << std::endl;
+	_name = src.getName();
+	_hitPoints = src.getHitPoints();
+	_energyPoints = src.getEnergyPoints();
+	_attackDamage = src.getAttackDamage();
 	return *this;
 }
 //--------------------------------

@@ -41,7 +41,7 @@ $(OBJS_DIR)/%.o:	$(SRCS_DIR)/%.cpp $(INCLUDES) | $(OBJS_DIR)
 					@$(CC) $(FLAGS) -o $@ -c $<
 
 $(OBJS_DIR):
-					mkdir -p $(OBJS_DIR)
+					@mkdir -p $(OBJS_DIR)
 
 clean:
 					@echo "Deleting object files"

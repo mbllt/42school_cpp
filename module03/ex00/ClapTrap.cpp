@@ -13,6 +13,7 @@ ClapTrap::ClapTrap(std::string name)
 }
 
 ClapTrap::ClapTrap (ClapTrap const& cpy) {
+	std:: cout << "Copy constructor called" << std::endl;
 	*this = cpy;
 }
 
@@ -25,9 +26,10 @@ ClapTrap::~ClapTrap(void) {
 //-----------Operators------------
 ClapTrap & ClapTrap::operator=(ClapTrap const & src) {
 
+	std::cout << "Assignment operator called in ClapTrap." << std::endl;
 	_name = src.getName();
 	_hitPoints = src.getHitPoints();
-	_energyPoints = src.getHitPoints();
+	_energyPoints = src.getEnergyPoints();
 	_attackDamage = src.getAttackDamage();
 	return *this;
 }

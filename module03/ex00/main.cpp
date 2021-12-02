@@ -9,11 +9,11 @@ int	main()
 
 	Leo.attack(Yoan.getName());
 	Yoan.takeDamage(Leo.getAttackDamage());
-
+	std::cout << "Claire energy points : " << Claire.getEnergyPoints() << "." << std::endl;
 	Claire.beRepaired(3);
-
-	Claire.attack(Leo.getName());
-	Leo.takeDamage(Claire.getAttackDamage());
+	ClapTrap Harry(Yoan);
+	Claire.attack(Harry.getName());
+	Harry.takeDamage(Claire.getAttackDamage());
 	std::cout << "\n";
 	return 0;
 }

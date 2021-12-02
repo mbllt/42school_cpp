@@ -9,11 +9,14 @@ int	main()
 
 	Leo.attack(Drake.getName());
 	Drake.takeDamage(Leo.getAttackDamage());
+	std::cout << "\n";
+
+	ClapTrap Harry(Drake);
+	std::cout << "\n";
 
 	Zoro.beRepaired(3);
-
-	Zoro.attack(Leo.getName());
-	Leo.takeDamage(Zoro.getAttackDamage());
+	Zoro.attack(Harry.getName());
+	Harry.takeDamage(Zoro.getAttackDamage());
 	std::cout << "\n";
 
 	ScavTrap Mia("Mia");
@@ -33,6 +36,7 @@ int	main()
 
 	Drake.attack(Hugo.getName());
 	Hugo.takeDamage(Drake.getAttackDamage());
+	std::cout << "Mathis energy points : " << Mathis.getEnergyPoints() << "." << std::endl;
 	Mathis.highFivesGuys();
 	Esteban.beRepaired(10000);
 	Hugo.attack(Mathis.getName());
