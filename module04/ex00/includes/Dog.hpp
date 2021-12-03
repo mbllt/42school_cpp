@@ -3,10 +3,6 @@
 
 #include "main.hpp"
 
-//-------Polymorphism--------
-//
-//
-
 class Dog : public Animal {
 
 	public:
@@ -15,12 +11,12 @@ class Dog : public Animal {
 		Dog(Dog const& cpy);
 		virtual ~Dog(void);
 
-		Dog&		operator=(Dog const & src);
+		Dog&			operator=(Dog const & src);
 
-		void		makeSound() const;
+		virtual void	makeSound() const;
 
 
-	protected:
+	private:
 
 
 };

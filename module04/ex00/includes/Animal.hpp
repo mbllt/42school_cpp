@@ -3,10 +3,6 @@
 
 #include "main.hpp"
 
-//-------Polymorphism--------
-//
-//
-
 class Animal {
 
 	public:

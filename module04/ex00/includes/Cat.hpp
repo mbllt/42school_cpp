@@ -3,10 +3,6 @@
 
 #include "main.hpp"
 
-//-------Polymorphism--------
-//
-//
-
 class Cat : public Animal {
 
 	public:
@@ -20,7 +16,7 @@ class Cat : public Animal {
 		void		makeSound() const;
 
 
-	protected:
+	private:
 
 
 };
@@ -35,10 +31,10 @@ class WrongCat : public WrongAnimal {
 
 		WrongCat&		operator=(WrongCat const & src);
 
-		void		makeSound() const;
+		virtual void	makeSound() const;
 
 
-	protected:
+	private:
 
 
 };
