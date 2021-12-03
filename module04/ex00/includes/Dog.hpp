@@ -12,7 +12,6 @@ class Dog : public Animal {
 	public:
 		
 		Dog(void);
-		Dog(std::string name);
 		Dog(Dog const& cpy);
 		virtual ~Dog(void);
 

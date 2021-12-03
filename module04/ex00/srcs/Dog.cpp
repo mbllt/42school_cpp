@@ -3,12 +3,7 @@
 //-----Constructors/Destructors----
 Dog::Dog(void) {
 	std::cout << "Constructing Dog" << std::endl;
-}
-
-Dog::Dog(std::string name) {
-	std::cout << "Constructing Dog : " << name << std::endl;
-	_name = name;
-	_type = _name;
+	_type = "Dog";
 }
 
 Dog::Dog (Dog const& cpy) {
@@ -17,7 +12,7 @@ Dog::Dog (Dog const& cpy) {
 }
 
 Dog::~Dog(void) {
-	std::cout << "Destructing Dog : " << _name << std::endl;
+	std::cout << "Destructing Dog." << std::endl;
 }
 //--------------------------------
 
@@ -25,7 +20,7 @@ Dog::~Dog(void) {
 //-----------Operators------------
 Dog & Dog::operator=(Dog const & src) {
 	std::cout << "Assignment operator called in Dog." << std::endl;
-	_name = src.getName();
+	_type = src.getType();
 	return *this;
 }
 //--------------------------------

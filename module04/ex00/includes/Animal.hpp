@@ -12,19 +12,17 @@ class Animal {
 	public:
 		
 		Animal(void);
-		Animal(std::string name);
 		Animal(Animal const& cpy);
 		virtual ~Animal(void);
 
 		Animal&			operator=(Animal const & src);
 
-		std::string		getName() const;
+		std::string		getType() const;
 
 
 	protected:
 
 		std::string		_type;
-		std::string		_name;
 
 
 };

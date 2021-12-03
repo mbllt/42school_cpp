@@ -12,7 +12,6 @@ class Cat : public Animal {
 	public:
 		
 		Cat(void);
-		Cat(std::string name);
 		Cat(Cat const& cpy);
 		virtual ~Cat(void);
 

@@ -3,12 +3,7 @@
 //-----Constructors/Destructors----
 Cat::Cat(void) {
 	std::cout << "Constructing Cat" << std::endl;
-}
-
-Cat::Cat(std::string name) {
-	std::cout << "Constructing Cat : " << name << std::endl;
-	_name = name;
-	_type = _name;
+	_type = "Cat";
 }
 
 Cat::Cat (Cat const& cpy) {
@@ -17,7 +12,7 @@ Cat::Cat (Cat const& cpy) {
 }
 
 Cat::~Cat(void) {
-	std::cout << "Destructing Cat : " << _name << std::endl;
+	std::cout << "Destructing Cat." << std::endl;
 }
 //--------------------------------
 
@@ -25,7 +20,7 @@ Cat::~Cat(void) {
 //-----------Operators------------
 Cat & Cat::operator=(Cat const & src) {
 	std::cout << "Assignment operator called in Cat." << std::endl;
-	_name = src.getName();
+	_type = src.getType();
 	return *this;
 }
 //--------------------------------
