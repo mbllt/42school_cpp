@@ -31,4 +31,45 @@ Cat & Cat::operator=(Cat const & src) {
 
 
 //------------Functions-----------
+void Cat::makeSound() const {
+	std::cout << "****Miaou, im a cat****" << std::endl;
+}
+//-------------------------------
+
+
+
+//-----Constructors/Destructors----
+WrongCat::WrongCat(void) {
+	std::cout << "Constructing WrongCat" << std::endl;
+	_type = "WrongCat";
+}
+
+WrongCat::WrongCat (WrongCat const& cpy) {
+	std:: cout << "Copy constructor called in WrongCat." << std::endl;
+	*this = cpy;
+}
+
+WrongCat::~WrongCat(void) {
+	std::cout << "Destructing WrongCat." << std::endl;
+}
+//--------------------------------
+
+
+//-----------Operators------------
+WrongCat & WrongCat::operator=(WrongCat const & src) {
+	std::cout << "Assignment operator called in WrongCat." << std::endl;
+	_type = src.getType();
+	return *this;
+}
+//--------------------------------
+
+
+//--------Getters/Setters---------
+//--------------------------------
+
+
+//------------Functions-----------
+void WrongCat::makeSound() const {
+	std::cout << "****Miaou, im a WrongCat****" << std::endl;
+}
 //-------------------------------

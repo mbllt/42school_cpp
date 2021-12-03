@@ -2,23 +2,32 @@
 
 int	main(void) {
 
-	Animal Serpent;
-	Dog Tribord;
-	Cat Shrimpy;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 	std::cout << "\n";
 
-	std::cout << "Serpent's type : " << Serpent.getType() << std::endl;
-	std::cout << "Tribord's type : " << Tribord.getType() << std::endl;
-	std::cout << "Shrimpy's type : " << Shrimpy.getType() << std::endl;
+	std::cout << "type : " << j->getType() << "." << std::endl;
+	std::cout << "type : " << i->getType() << "." << std::endl;
+	meta->makeSound();
+	j->makeSound();
+	i->makeSound();
 	std::cout << "\n";
 
-	Animal Anaconda(Serpent);
-	Cat Garfilde = Shrimpy;
+	const WrongAnimal* metabis = new WrongAnimal();
+	const WrongAnimal* k = new WrongCat();
 	std::cout << "\n";
 
-	std::cout << "Garfilde's type : " << Garfilde.getType() << std::endl;
-	std::cout << "Anaconda's type : " << Anaconda.getType() << std::endl;
+	std::cout << "type : " << metabis->getType() << "." << std::endl;
+	std::cout << "type : " << k->getType() << "." << std::endl;
+	metabis->makeSound();
+	k->makeSound();
 	std::cout << "\n";
 
+	delete (meta);
+	delete (i);
+	delete (j);
+	delete (metabis);
+	delete (k);
 	return (0);
 }

@@ -17,6 +17,26 @@ class Cat : public Animal {
 
 		Cat&		operator=(Cat const & src);
 
+		void		makeSound() const;
+
+
+	protected:
+
+
+};
+
+class WrongCat : public WrongAnimal {
+
+	public:
+		
+		WrongCat(void);
+		WrongCat(WrongCat const& cpy);
+		virtual ~WrongCat(void);
+
+		WrongCat&		operator=(WrongCat const & src);
+
+		void		makeSound() const;
+
 
 	protected:
 

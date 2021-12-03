@@ -34,4 +34,47 @@ std::string Animal::getType () const {
 
 
 //------------Functions-----------
+void Animal::makeSound() const {
+}
+//-------------------------------
+
+
+
+//-----Constructors/Destructors----
+WrongAnimal::WrongAnimal(void) {
+	std::cout << "Constructing WrongAnimal." << std::endl;
+	_type = "WrongAnimal";
+}
+
+WrongAnimal::WrongAnimal (WrongAnimal const& cpy) {
+	std:: cout << "Copy constructor called in WrongAnimal." << std::endl;
+	*this = cpy;
+}
+
+WrongAnimal::~WrongAnimal(void) {
+	std::cout << "Destructing WrongAnimal." << std::endl;
+}
+//--------------------------------
+
+
+//-----------Operators------------
+WrongAnimal & WrongAnimal::operator=(WrongAnimal const & src) {
+	std::cout << "Assignment operator called in WrongAnimal." << std::endl;
+	_type = src.getType();
+	return *this;
+}
+//--------------------------------
+
+
+//--------Getters/Setters---------
+std::string WrongAnimal::getType () const {
+	return _type;
+}
+//--------------------------------
+
+
+//------------Functions-----------
+void WrongAnimal::makeSound() const {
+	std::cout << "****hello, im a WrongAnimal****" << std::endl;
+}
 //-------------------------------

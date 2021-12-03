@@ -30,5 +30,8 @@ Dog & Dog::operator=(Dog const & src) {
 //--------------------------------
 
 
-//------------Functions-----------
+//------------Functions----------
+void Dog::makeSound() const {
+	std::cout << "****Wouf, im a dog****" << std::endl;
+}
 //-------------------------------
