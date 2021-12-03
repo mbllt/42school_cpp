@@ -1,19 +1,14 @@
 #include "main.hpp"
 
 //-----Constructors/Destructors----
-ClapTrap::ClapTrap(void) {
+ClapTrap::ClapTrap(void)
+	: _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "Constructing ClapTrap" << std::endl;
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
 }
 
-ClapTrap::ClapTrap(std::string name) {
+ClapTrap::ClapTrap(std::string name)
+	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "Constructing ClapTrap : " << name << std::endl;
-	_name = name;
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
 }
 
 ClapTrap::ClapTrap (ClapTrap const& cpy) {
@@ -81,7 +76,10 @@ void ClapTrap::attack(std::string const & target) const {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	_hitPoints -= amount;
+	if (amount > _hitPoints)
+		_hitPoints = 0;
+	else
+		_hitPoints -= amount;
 	std::cout << "ClapTrap : " << _name << " has taken " << amount
 				<< " points of damage. Current hit points : "
 				<< _hitPoints << "." << std::endl;

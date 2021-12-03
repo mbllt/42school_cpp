@@ -23,7 +23,7 @@ class ScavTrap : virtual public ClapTrap {
 		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap const& cpy);
-		~ScavTrap(void);
+		virtual ~ScavTrap(void);
 
 		ScavTrap&		operator=(ScavTrap const & src);
 

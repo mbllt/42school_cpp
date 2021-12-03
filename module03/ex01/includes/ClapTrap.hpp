@@ -23,7 +23,7 @@ class ClapTrap {
 		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const& cpy);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 
 		ClapTrap&		operator=(ClapTrap const & src);
 

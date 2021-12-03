@@ -23,7 +23,7 @@ class FragTrap : virtual public ClapTrap {
 		FragTrap(void);
 		FragTrap(std::string name);
 		FragTrap(FragTrap const& cpy);
-		~FragTrap(void);
+		virtual ~FragTrap(void);
 
 		FragTrap&		operator=(FragTrap const & src);
 
