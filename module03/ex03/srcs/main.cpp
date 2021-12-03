@@ -51,6 +51,7 @@ int	main()
 	Voldemort.attack(Drake.getName());
 	Drake.takeDamage(Voldemort.getAttackDamage());
 	Voldemort.whoAmI();
-	std::cout << "\n";
+	std::cout << "\n";	
+
 	return 0;
 }

@@ -42,5 +42,6 @@ int	main()
 	Hugo.attack(Mathis.getName());
 	Mathis.takeDamage(Hugo.getAttackDamage());
 	std::cout << "\n";
+
 	return 0;
 }

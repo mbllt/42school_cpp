@@ -11,7 +11,6 @@ DiamondTrap::DiamondTrap(void) {
 DiamondTrap::DiamondTrap(std::string name) : _name(name) {
 	std::cout << "Constructing DiamondTrap : " << _name << std::endl;
 	ClapTrap::_name = _name + "_clap_name";
-	_clap_name = _name + "_clap_name";
 	_hitPoints = FragTrap::getHitPoints();
 	_energyPoints = ScavTrap::getEnergyPoints();
 	_attackDamage = FragTrap::getAttackDamage();
@@ -32,7 +31,6 @@ DiamondTrap::~DiamondTrap(void) {
 DiamondTrap & DiamondTrap::operator=(DiamondTrap const & src) {
 	std::cout << "Assignment operator called in DiamondTrap." << std::endl;
 	_name = src.getName();
-	_clap_name = src.getClapName();
 	_hitPoints = src.getHitPoints();
 	_energyPoints = src.getEnergyPoints();
 	_attackDamage = src.getAttackDamage();
@@ -44,10 +42,6 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & src) {
 //--------Getters/Setters---------
 std::string DiamondTrap::getName () const {
 	return _name;
-}
-
-std::string DiamondTrap::getClapName () const {
-	return _clap_name;
 }
 //--------------------------------
 
