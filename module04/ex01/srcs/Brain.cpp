@@ -19,7 +19,10 @@ Brain::~Brain(void) {
 //-----------Operators------------
 Brain & Brain::operator=(Brain const & src) {
 	std::cout << "Assignment operator called in Brain." << std::endl;
-	(void)src;
+	for (int i = 0; i < 100; i++)
+	{
+		_ideas[i] = src.getIdea(i);
+	}
 	return *this;
 }
 //--------------------------------

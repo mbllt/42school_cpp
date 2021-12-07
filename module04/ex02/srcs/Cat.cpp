@@ -24,6 +24,10 @@ Cat::~Cat(void) {
 Cat & Cat::operator=(Cat const & src) {
 	std::cout << "Assignment operator called in Cat." << std::endl;
 	_type = src.getType();
+	for (int i = 0; i < 100; i++)
+	{
+		_brain->setIdea(i, src.getBrain()->getIdea(i));
+	}
 	return *this;
 }
 //--------------------------------

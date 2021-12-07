@@ -32,7 +32,7 @@ int	main(void) {
 	std::cout << "\n";
 	Dog B(A);
 	std::cout << "\n";
-	Dog C = A; //this calls the copy constructor... which i dont want
+	Dog C = A;
 	std::cout << "\n";
 	std::cout << "\n------------------------------\n\n";
 
