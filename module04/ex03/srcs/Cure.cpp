@@ -34,4 +34,5 @@ std::string const & Cure::getType () const {
 
 
 //------------Functions-----------
+
 //-------------------------------

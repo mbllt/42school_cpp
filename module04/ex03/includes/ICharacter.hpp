@@ -23,6 +23,7 @@ class ICharacter {
 
 		std::string						name;
 		AMateria						materia[4];
+		unsigned int					nbrMateria;
 
 
 };

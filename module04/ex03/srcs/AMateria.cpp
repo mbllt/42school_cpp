@@ -39,15 +39,15 @@ std::string const & AMateria::getType () const {
 
 
 //------------Functions-----------
-AMateria* clone() const {
+AMateria* AMateria::clone() const {
 	AMateria bis = new AMateria(this.getType());
 	return &bis;
 }
 
-void use(ICharacter& target) {
-	if (Cure::Cure.getType() == "cure")
+void AMateria::use(ICharacter& target) {
+	if (getType() == "cure")
 		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
-	else if (Ice::Ice.getType() == "ice")
+	else if (getType() == "ice")
 		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 //-------------------------------
