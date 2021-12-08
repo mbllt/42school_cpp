@@ -21,7 +21,7 @@ int	main(void) {
 	cat.getBrain()->setIdea(3, "LOL");
 	Cat cpy = cat;
 	Cat cpy2(cat);
-	std::cout << "\n"; // l'ordre des constructionme parait bizarre...
+	std::cout << "\n";
 
 	std::cout << "Copy:" << std::endl;
 	cpy.getBrain()->displayIdeas();
@@ -37,5 +37,21 @@ int	main(void) {
 	cat.getBrain()->displayIdeas();
 	std::cout << "\n";
 
+	std::cout << "\n------------------------------\n\n";
+
+	AAnimal* i = new Cat();
+	AAnimal* j = new Dog();
+
+	i->makeSound();
+	j->makeSound();
+
+	delete i;
+	delete j;
+
+	std::cout << std::endl;
+	Dog chien;
+	{
+		Dog tmp = chien;
+	}
 	return (0);
 }

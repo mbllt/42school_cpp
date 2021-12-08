@@ -1,5 +1,5 @@
 #-------------- NAME-----------------
-NAME=			purified
+NAME=			abstract
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs

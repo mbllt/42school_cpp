@@ -1,13 +1,10 @@
 #-------------- NAME-----------------
-NAME=			purified
+NAME=			interfaces
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
 SRCS_FILES=		main.cpp\
-				AAnimal.cpp\
-				Cat.cpp\
-				Dog.cpp\
-				Brain.cpp
+				AMateria.cpp
 
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 
@@ -22,10 +19,8 @@ FLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -Iincludes/
 
 #-------------- INCS------------------
 INC_DIR=		includes
-INC_FILES=		AAnimal.hpp\
-				Cat.hpp\
-				Dog.hpp\
-				Brain.hpp
+INC_FILES=		AMateria.cpp
+
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 
 #-------------- RM---------------------
