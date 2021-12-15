@@ -1,14 +1,23 @@
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 //-----Constructors/Destructors----
 Character::Character(void) {
 	std::cout << "Constructing Character." << std::endl;
-	nbrMateria = 0;
+	_nbrMateria = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		_materia[i] = NULL;
+	}
 }
 
-Character::Character(std::string name) : name(newName) {
+Character::Character(std::string name) : _name(name) {
 	std::cout << "Constructing Character." << std::endl;
-	nbrMateria = 0;
+	_nbrMateria = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		_materia[i] = NULL;
+	}
 }
 
 Character::Character (Character const& cpy) {
@@ -18,12 +27,12 @@ Character::Character (Character const& cpy) {
 
 Character::~Character(void) {
 	std::cout << "Destructing Character." << std::endl;
-	int i = 0;
-	while (i < 4 && materia[i])
-	{
-		delete (materia[i]);
-		i++;
-	}
+	// int i = 0;
+	// while (i < 4 && _materia[i])
+	// {
+	// 	delete (_materia[i]);
+	// 	i++;
+	// }
 }
 //--------------------------------
 
@@ -31,8 +40,9 @@ Character::~Character(void) {
 //-----------Operators------------
 Character & Character::operator=(Character const & src) {
 	std::cout << "Assignment operator called in Character." << std::endl;
-	_type = src.getType();
-	_name = srcs.getName();
+	_name = src.getName();
+	for (int i = 0; i < 4; i++)
+		*_materia[i] = src.getMateria(i);
 	_nbrMateria = getNbrMateria();
 	return *this;
 }
@@ -41,7 +51,16 @@ Character & Character::operator=(Character const & src) {
 
 //--------Getters/Setters---------
 std::string const & Character::getName() const {
-	return name;
+	return _name;
+}
+
+AMateria const & Character::getMateria(unsigned int index) const {
+	// if (index >= 0 && index <= 4)
+		return *_materia[index];
+}
+
+unsigned int const & Character::getNbrMateria() const {
+	return _nbrMateria;
 }
 
 //--------------------------------
@@ -49,22 +68,23 @@ std::string const & Character::getName() const {
 
 //------------Functions-----------
 void Character::equip(AMateria* m) {
-	materia[nbrMateria] = m;
-	if (nbrMateria < 4)
-		nbrMateria++;
+	if (_nbrMateria >= 0 && _nbrMateria <= 4)
+		_materia[_nbrMateria] = m;
+	if (_nbrMateria < 4)
+		_nbrMateria++;
 }
 
 void Character::unequip(int idx) {
-	if (idx >= 0 && idx <= 4 && materia[idx])
+	if (idx >= 0 && idx <= 4 && _materia[idx])
 	{
-		return ;
+		_materia[idx] = 0;
 	}
 }
 
-void Character::use(int idx, Character& target) {
-	if (idx >= 0 && idx <= 4 && target.materia[idx])
+void Character::use(int idx, ICharacter& target) {
+	if (idx >= 0 && idx <= 4 && _materia[idx])
 	{
-		AMateria::use(target.materia[idx]);
+		_materia[idx]->use(target);
 	}
 }
 //-------------------------------

@@ -3,6 +3,11 @@
 
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
+
+class ICharacter;	// important car dans AMateria jutilise ICharacter et dans
+					// ICharacter jutilise AMateria donc ca fait une sorte de boucle
+					// bizarre et sans ca ca compile pas.
 
 class AMateria {
 

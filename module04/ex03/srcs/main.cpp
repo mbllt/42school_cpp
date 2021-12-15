@@ -1,7 +1,11 @@
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include <string>
+#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int	main(void) {
 

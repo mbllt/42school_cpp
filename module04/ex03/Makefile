@@ -4,7 +4,11 @@ NAME=			interfaces
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
 SRCS_FILES=		main.cpp\
-				AMateria.cpp
+				AMateria.cpp\
+				Ice.cpp\
+				Cure.cpp\
+				Character.cpp\
+				MateriaSource.cpp
 
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 
@@ -19,7 +23,13 @@ FLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -Iincludes/
 
 #-------------- INCS------------------
 INC_DIR=		includes
-INC_FILES=		AMateria.cpp
+INC_FILES=		AMateria.hpp\
+				Ice.hpp\
+				Cure.hpp\
+				ICharacter.hpp\
+				Character.hpp\
+				IMateriaSource.hpp\
+				MateriaSource.hpp
 
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 

@@ -33,17 +33,12 @@ AMateria & AMateria::operator=(AMateria const & src) {
 
 //--------Getters/Setters---------
 std::string const & AMateria::getType () const {
-	return *_type;
+	return _type;
 }
 //--------------------------------
 
 
 //------------Functions-----------
-AMateria* AMateria::clone() const {
-	AMateria bis = new AMateria(this.getType());
-	return &bis;
-}
-
 void AMateria::use(ICharacter& target) {
 	if (getType() == "cure")
 		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;

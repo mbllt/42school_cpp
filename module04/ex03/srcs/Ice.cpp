@@ -11,6 +11,11 @@ Ice::Ice (Ice const& cpy) {
 	*this = cpy;
 }
 
+Ice::Ice(std::string const & type) {
+	std::cout << "Constructing Ice with type." << std::endl;
+	_type = type;
+}
+
 Ice::~Ice(void) {
 	std::cout << "Destructing Ice." << std::endl;
 }
@@ -28,10 +33,14 @@ Ice & Ice::operator=(Ice const & src) {
 
 //--------Getters/Setters---------
 std::string const & Ice::getType () const {
-	return *_type;
+	return _type;
 }
 //--------------------------------
 
 
 //------------Functions-----------
+AMateria* Ice::clone() const {
+	AMateria* clone = new Ice(_type);
+	return clone;
+}
 //-------------------------------

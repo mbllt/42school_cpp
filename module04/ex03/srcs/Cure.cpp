@@ -11,6 +11,11 @@ Cure::Cure (Cure const& cpy) {
 	*this = cpy;
 }
 
+Cure::Cure(std::string const & type) {
+	std::cout << "Constructing Cure with type." << std::endl;
+	_type = type;
+}
+
 Cure::~Cure(void) {
 	std::cout << "Destructing Cure." << std::endl;
 }
@@ -28,11 +33,14 @@ Cure & Cure::operator=(Cure const & src) {
 
 //--------Getters/Setters---------
 std::string const & Cure::getType () const {
-	return *_type;
+	return _type;
 }
 //--------------------------------
 
 
 //------------Functions-----------
-
+AMateria* Cure::clone() const {
+	AMateria* clone = new Cure(_type);
+	return clone;
+}
 //-------------------------------

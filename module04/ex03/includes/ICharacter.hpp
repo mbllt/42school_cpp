@@ -5,25 +5,21 @@
 #include <string>
 #include "AMateria.hpp"
 
+class AMateria;	// important car dans AMateria jutilise ICharacter et dans
+				// ICharacter jutilise AMateria donc ca fait une sorte de boucle
+				// bizarre et sans ca ca compile pas.
+
 class ICharacter {
 
 	public:
+
+		virtual ~ICharacter(void) {} ;
 		
-		ICharacter(void);
-		ICharacter(std::string const name);
-		ICharacter(ICharacter const& cpy);
-		virtual ~ICharacter(void);
-
-		ICharacter&						operator=(ICharacter const & src);
-
 		virtual std::string const &		getName() const = 0;
-		virtual void					equip(ICharacter* m) = 0;
+		virtual void					equip(AMateria* m) = 0;
 		virtual void					unequip(int idx) = 0;
 		virtual void					use(int idx, ICharacter& target) = 0;
 
-		std::string						name;
-		AMateria						materia[4];
-		unsigned int					nbrMateria;
-
-
 };
+
+#endif
