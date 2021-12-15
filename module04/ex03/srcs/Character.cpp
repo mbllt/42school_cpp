@@ -40,12 +40,12 @@ Character::Character (Character const& cpy) {
 
 Character::~Character(void) {
 	std::cout << "Destructing Character." << std::endl;
-	// int i = 0;
-	// while (i < 4 && _materia[i])
-	// {
-	// 	delete (_materia[i]);
-	// 	i++;
-	// }
+	unsigned int i = 0;
+	while (i < _nbrMateria)
+	{
+		delete (_materia[i]);
+		i++;
+	}
 }
 //--------------------------------
 

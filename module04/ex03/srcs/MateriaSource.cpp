@@ -34,12 +34,6 @@ MateriaSource::MateriaSource (MateriaSource const& cpy) {
 MateriaSource::~MateriaSource(void) {
 	std::cout << "Destructing MateriaSource." << std::endl;
 	// int i = 0;
-	// while (i < 4 && _learnMateria[i])
-	// {
-	// 	delete (_learnMateria[i]);
-	// 	i++;
-	// }
-	// i = 0;
 	// while (i < 4 && _toDelete[i])
 	// {
 	// 	delete _toDelete[i];
@@ -76,7 +70,7 @@ MateriaSource & MateriaSource::operator=(MateriaSource const & src) {
 
 
 //------------Functions-----------
-void MateriaSource::learnMateria(AMateria * tmp) {	// Not sure
+void MateriaSource::learnMateria(AMateria * tmp) {
 	// int i = 0;
 	// while (i < 4 && _toDelete[i])
 	// 	i++;
@@ -87,13 +81,15 @@ void MateriaSource::learnMateria(AMateria * tmp) {	// Not sure
 		_learnMateria[_nbrLearnMateria] = tmp;
 		_nbrLearnMateria++;
 	}
+	else
+		delete tmp;
 }
 
-AMateria * MateriaSource::createMateria(std::string const & type) {	// Not sure
+AMateria * MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < 4; i++)
 	{
 		if (_learnMateria[i] && _learnMateria[i]->getType() == type)
-			return _learnMateria[i];
+			return _learnMateria[i]->clone();
 	}
 	return 0;
 }
