@@ -19,12 +19,10 @@ MateriaSource::MateriaSource (MateriaSource const& cpy) {
 	{
 		_learnMateria[i] = cpy._learnMateria[i]->clone();
 		i++;
-		// _toDelete[i] = src.getToDelete(i);
 	}
 	while (i < 4)
 	{
 		_learnMateria[i] = NULL;
-		// _toDelete[i] = NULL;
 		i++;
 	}
 	_nbrLearnMateria = cpy._nbrLearnMateria;
@@ -33,12 +31,12 @@ MateriaSource::MateriaSource (MateriaSource const& cpy) {
 
 MateriaSource::~MateriaSource(void) {
 	std::cout << "Destructing MateriaSource." << std::endl;
-	// int i = 0;
-	// while (i < 4 && _toDelete[i])
-	// {
-	// 	delete _toDelete[i];
-	// 	i++;
-	// }
+	unsigned int i = 0;
+	while (i < _nbrLearnMateria)
+	{
+		delete _learnMateria[i];
+		i++;
+	}
 }
 //--------------------------------
 
@@ -53,7 +51,6 @@ MateriaSource & MateriaSource::operator=(MateriaSource const & src) {
 	for (unsigned int i = 0; i < src._nbrLearnMateria; i++)
 	{
 		_learnMateria[i] = src._learnMateria[i]->clone();
-		// _toDelete[i] = src.getToDelete(i);
 	}
 	_nbrLearnMateria = src._nbrLearnMateria;
 	return *this;
@@ -62,20 +59,11 @@ MateriaSource & MateriaSource::operator=(MateriaSource const & src) {
 
 
 //--------Getters/Setters---------
-// void * MateriaSource::getToDelete(unsigned int index) const {
-// 	// if (index >= 0 && index <= 4)
-// 		return _toDelete[index];
-// }
 //--------------------------------
 
 
 //------------Functions-----------
 void MateriaSource::learnMateria(AMateria * tmp) {
-	// int i = 0;
-	// while (i < 4 && _toDelete[i])
-	// 	i++;
-	// if (i < 4)
-	// 	_toDelete[i] = tmp;
 	if (_nbrLearnMateria < 4)
 	{
 		_learnMateria[_nbrLearnMateria] = tmp;

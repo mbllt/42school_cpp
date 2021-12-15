@@ -77,10 +77,13 @@ std::string const & Character::getName() const {
 
 //------------Functions-----------
 void Character::equip(AMateria* m) {
-	if (_nbrMateria >= 0 && _nbrMateria <= 4)
-		_materia[_nbrMateria] = m;
 	if (_nbrMateria < 4)
+	{
+		_materia[_nbrMateria] = m;
 		_nbrMateria++;
+	}
+	else
+	delete m;
 }
 
 void Character::unequip(int idx) {
