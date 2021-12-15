@@ -26,6 +26,9 @@ AMateria::~AMateria(void) {
 AMateria & AMateria::operator=(AMateria const & src) {
 	std::cout << "Assignment operator called in AMateria." << std::endl;
 	_type = src.getType();
+	// src.getType();
+	// (void)src;
+	// _type = "AMateria";
 	return *this;
 }
 //--------------------------------

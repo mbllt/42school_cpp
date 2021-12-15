@@ -8,6 +8,7 @@ Ice::Ice(void) {
 
 Ice::Ice (Ice const& cpy) {
 	std:: cout << "Copy constructor called in Ice." << std::endl;
+	_type = "ice";
 	*this = cpy;
 }
 

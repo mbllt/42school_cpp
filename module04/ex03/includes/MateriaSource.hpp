@@ -7,6 +7,7 @@ class MateriaSource : public IMateriaSource {
 
 	protected :
 
+		// void *				_toDelete[4];
 		AMateria*			_learnMateria[4];
 		unsigned int		_nbrLearnMateria;
 

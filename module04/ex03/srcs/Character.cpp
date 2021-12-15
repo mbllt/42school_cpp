@@ -55,14 +55,12 @@ std::string const & Character::getName() const {
 }
 
 AMateria const & Character::getMateria(unsigned int index) const {
-	// if (index >= 0 && index <= 4)
-		return *_materia[index];
+	return *_materia[index];
 }
 
 unsigned int const & Character::getNbrMateria() const {
 	return _nbrMateria;
 }
-
 //--------------------------------
 
 

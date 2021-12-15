@@ -51,15 +51,15 @@ unsigned int MateriaSource::getNbrLearnMateria() const {
 
 
 //------------Functions-----------
-void MateriaSource::learnMateria(AMateria * tmp) {
+void MateriaSource::learnMateria(AMateria * tmp) {	// Not sure
 	if (_nbrLearnMateria < 4)
 	{
-		*_learnMateria[_nbrLearnMateria] = *tmp;
+		_learnMateria[_nbrLearnMateria] = tmp;
 		_nbrLearnMateria++;
 	}
 }
 
-AMateria * MateriaSource::createMateria(std::string const & type) {
+AMateria * MateriaSource::createMateria(std::string const & type) {	// Not sure
 	for (int i = 0; i < 4; i++)
 	{
 		if (_learnMateria[i] && _learnMateria[i]->getType() == type)
