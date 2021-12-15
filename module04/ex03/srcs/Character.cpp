@@ -22,6 +22,19 @@ Character::Character(std::string name) : _name(name) {
 
 Character::Character (Character const& cpy) {
 	std:: cout << "Copy constructor called in Character." << std::endl;
+	_name = cpy.getName();
+	unsigned int i = 0;
+	while (i < cpy._nbrMateria)
+	{
+		_materia[i] = cpy._materia[i]->clone();
+		i++;
+	}
+	while (i < 4)
+	{
+		_materia[i] = NULL;
+		i++;
+	}
+	_nbrMateria = cpy._nbrMateria;
 	*this = cpy;
 }
 
@@ -41,9 +54,15 @@ Character::~Character(void) {
 Character & Character::operator=(Character const & src) {
 	std::cout << "Assignment operator called in Character." << std::endl;
 	_name = src.getName();
-	for (int i = 0; i < 4; i++)
-		*_materia[i] = src.getMateria(i);
-	_nbrMateria = getNbrMateria();
+	for (unsigned int i = 0; i < _nbrMateria; i++)
+	{
+		delete _materia[i];
+	}
+	for (unsigned int i = 0; i < src._nbrMateria; i++)
+	{
+		_materia[i] = src._materia[i]->clone();
+	}
+	_nbrMateria = src._nbrMateria;
 	return *this;
 }
 //--------------------------------
@@ -52,14 +71,6 @@ Character & Character::operator=(Character const & src) {
 //--------Getters/Setters---------
 std::string const & Character::getName() const {
 	return _name;
-}
-
-AMateria const & Character::getMateria(unsigned int index) const {
-	return *_materia[index];
-}
-
-unsigned int const & Character::getNbrMateria() const {
-	return _nbrMateria;
 }
 //--------------------------------
 

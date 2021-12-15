@@ -20,8 +20,7 @@ class MateriaSource : public IMateriaSource {
 
 		MateriaSource &		operator=(MateriaSource const & cpy);
 
-		AMateria const &	getLearnMateria(unsigned int index) const;
-		unsigned int		getNbrLearnMateria() const;
+		// void *				getToDelete(unsigned int index) const;
 
 		void				learnMateria(AMateria * tmp);
 		AMateria *			createMateria(std::string const & type);

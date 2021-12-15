@@ -19,12 +19,10 @@ class Character : public ICharacter {
 		Character(void);
 		Character(std::string const name);
 		Character(Character const & cpy);
-		virtual ~Character(void);	// do I need to delete anything ? The Materia ?
+		virtual ~Character(void);
 
 		Character&						operator=(Character const & src);
 
-		AMateria const &				getMateria(unsigned int index) const;
-		unsigned int const &			getNbrMateria() const;
 		std::string const &				getName() const;
 
 		void							equip(AMateria* m);
@@ -34,6 +32,5 @@ class Character : public ICharacter {
 
 };
 
-//	copies must be deep : I dont allocate anything, is it ok ?
 
 #endif
