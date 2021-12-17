@@ -20,6 +20,7 @@ ICharacter* me = new Character("me");
     src->learnMateria(new Cure());
     src->learnMateria(new Cure());
     src->learnMateria(new Cure());
+	std::cout << "\n------------------------------\n\n";
     //Depassement de stockage sur character
     //
     AMateria* tmp;
@@ -35,6 +36,7 @@ ICharacter* me = new Character("me");
     me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
+	std::cout << "\n------------------------------\n\n";
     //materia inexistante
     tmp = src->createMateria("ice");
     bob->equip(tmp);
@@ -43,7 +45,8 @@ ICharacter* me = new Character("me");
     tmp = src->createMateria("ruissellement ");
     bob->equip(tmp);
 //
-// test overload =
+	std::cout << "\n------------------------------\n\n";
+// test de base =
     Character *eric = new Character("eric");
     Character *copy = new Character("cpy");
     tmp = src->createMateria("ice");
@@ -62,10 +65,10 @@ ICharacter* me = new Character("me");
     std::cout<<"ERIC VS BOB !\n";
     eric->use(0, *bob);
     eric->use(1, *bob);
-//test de base
     std::cout<<"ME VS BOB !\n";
     me->use(0, *bob);
     me->use(1, *bob);
+	std::cout << "\n------------------------------\n\n";
 
     delete bob;
     delete src;
