@@ -20,7 +20,8 @@ Dog::~Dog(void) {
 //-----------Operators------------
 Dog & Dog::operator=(Dog const & src) {
 	std::cout << "Assignment operator called in Dog." << std::endl;
-	_type = src.getType();
+	(void)src;
+	_type = "Dog";
 	return *this;
 }
 //--------------------------------

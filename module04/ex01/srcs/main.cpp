@@ -46,15 +46,17 @@ int	main(void) {
 	cpy.getBrain()->displayIdeas();
 	std::cout << "Copy2:" << std::endl;
 	cpy2.getBrain()->displayIdeas();
-	std::cout << "Cat:" << std::endl;
+	std::cout << "Cat: setting new idea." << std::endl;
 	cat.getBrain()->setIdea(5, "MDR");
+	std::cout << "Cat:" << std::endl;
+	cat.getBrain()->displayIdeas();
 	std::cout << "Copy:" << std::endl;
 	cpy.getBrain()->displayIdeas();
 	std::cout << "Copy2:" << std::endl;
 	cpy2.getBrain()->displayIdeas();
-	std::cout << "Cat:" << std::endl;
-	cat.getBrain()->displayIdeas();
 	std::cout << "\n";
 
 	return (0);
 }
+
+// >> tests destructer without virtual

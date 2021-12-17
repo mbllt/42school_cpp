@@ -13,10 +13,12 @@ class Dog : public Animal {
 		Dog(void);
 		Dog(Dog const& cpy);
 		virtual ~Dog(void);
+		// ~Dog(void);
 
 		Dog&				operator=(Dog const & src);
 
 		virtual void		makeSound() const;
+		// void				makeSound() const;
 		Brain *				getBrain() const;
 
 	private:

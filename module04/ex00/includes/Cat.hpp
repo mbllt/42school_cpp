@@ -11,9 +11,9 @@ class Cat : public Animal {
 		Cat(Cat const& cpy);
 		virtual ~Cat(void);
 
-		Cat&		operator=(Cat const & src);
+		Cat&			operator=(Cat const & src);
 
-		void		makeSound() const;
+		virtual void	makeSound() const;
 
 
 	private:
@@ -29,9 +29,9 @@ class WrongCat : public WrongAnimal {
 		WrongCat(WrongCat const& cpy);
 		virtual ~WrongCat(void);
 
-		WrongCat&		operator=(WrongCat const & src);
+		WrongCat&	operator=(WrongCat const & src);
 
-		virtual void	makeSound() const;
+		void		makeSound() const;
 
 
 	private:

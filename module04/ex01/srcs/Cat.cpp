@@ -23,7 +23,7 @@ Cat::~Cat(void) {
 //-----------Operators------------
 Cat & Cat::operator=(Cat const & src) {
 	std::cout << "Assignment operator called in Cat." << std::endl;
-	_type = src.getType();
+	_type = "Cat";
 	for (int i = 0; i < 100; i++)
 	{
 		_brain->setIdea(i, src.getBrain()->getIdea(i));

@@ -12,7 +12,7 @@ class Cure : public AMateria {
 		Cure(void);
 		Cure(Cure const& cpy);
 		Cure(std::string const & type);
-		virtual ~Cure(void);	// do I need to delete anything ?
+		virtual ~Cure(void);
 
 		Cure&					operator=(Cure const & src);
 

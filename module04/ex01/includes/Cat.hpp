@@ -13,10 +13,12 @@ class Cat : public Animal {
 		Cat(void);
 		Cat(Cat const& cpy);
 		virtual ~Cat(void);
+		// ~Cat(void);
 
 		Cat&			operator=(Cat const & src);
 
 		virtual void	makeSound() const;
+		// void			makeSound() const;
 		Brain *			getBrain() const;
 
 

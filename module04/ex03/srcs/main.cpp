@@ -58,7 +58,7 @@ ICharacter* me = new Character("me");
     copy->equip(tmp);
     *eric = *copy;
     delete copy;
-    
+
     std::cout<<"ERIC VS BOB !\n";
     eric->use(0, *bob);
     eric->use(1, *bob);
@@ -66,16 +66,9 @@ ICharacter* me = new Character("me");
     std::cout<<"ME VS BOB !\n";
     me->use(0, *bob);
     me->use(1, *bob);
-//test copy constructor 
-    ICharacter* maurice = new Character(*(static_cast<Character*>(me)));
-    delete me;
-    std::cout<<"MAURICE VS BOB !\n";
-    maurice->use(0, *bob);
-    maurice->use(1, *bob);
-    
+
     delete bob;
     delete src;
     delete eric;
-    delete maurice;
     return 0;
 }

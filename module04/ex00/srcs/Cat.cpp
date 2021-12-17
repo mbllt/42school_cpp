@@ -20,7 +20,8 @@ Cat::~Cat(void) {
 //-----------Operators------------
 Cat & Cat::operator=(Cat const & src) {
 	std::cout << "Assignment operator called in Cat." << std::endl;
-	_type = src.getType();
+	(void)src;
+	_type = "Cat";
 	return *this;
 }
 //--------------------------------

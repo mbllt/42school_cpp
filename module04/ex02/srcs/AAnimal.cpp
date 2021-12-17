@@ -34,6 +34,4 @@ std::string AAnimal::getType () const {
 
 
 //------------Functions-----------
-void AAnimal::makeSound() const {
-}
 //-------------------------------

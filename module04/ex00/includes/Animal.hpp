@@ -32,7 +32,7 @@ class WrongAnimal {
 		WrongAnimal(WrongAnimal const& cpy);
 		virtual ~WrongAnimal(void);
 
-		WrongAnimal&			operator=(WrongAnimal const & src);
+		WrongAnimal&	operator=(WrongAnimal const & src);
 
 		std::string		getType() const;
 		void			makeSound() const;

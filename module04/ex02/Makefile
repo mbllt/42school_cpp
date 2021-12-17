@@ -36,11 +36,13 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 					@echo "Linking $(NAME)"
-					@$(CC) $(OBJS) -o $(NAME)
+#					@$(CC) $(OBJS) -o $(NAME)
+					@$(CC) -fsanitize=address -g3 $(OBJS) -o $(NAME)
 
 $(OBJS_DIR)/%.o:	$(SRCS_DIR)/%.cpp $(INCLUDES) | $(OBJS_DIR)
 					@echo "Compiling $<"
-					@$(CC) $(FLAGS) -o $@ -c $<
+#					@$(CC) $(FLAGS) -o $@ -c $<
+					@$(CC) -fsanitize=address -g3 $(FLAGS) -o $@ -c $<
 
 $(OBJS_DIR):
 					@mkdir -p $(OBJS_DIR)

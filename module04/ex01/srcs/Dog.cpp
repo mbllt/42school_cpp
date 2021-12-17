@@ -24,7 +24,7 @@ Dog::~Dog(void) {
 //-----------Operators------------
 Dog & Dog::operator=(Dog const & src) {
 	std::cout << "Assignment operator called in Dog." << std::endl;
-	_type = src.getType();
+	_type = "Dog";
 	for (int i = 0; i < 100; i++)
 	{
 		_brain->setIdea(i, src.getBrain()->getIdea(i));
