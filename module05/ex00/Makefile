@@ -19,13 +19,16 @@ OBJS=			$(addprefix $(OBJS_DIR)/,$(SRCS_FILES:.cpp=.o))
 
 #-------------- COMPILER-------------
 CC=				clang++
-FLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -Iincludes/
+# FLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -Iincludes/
+FLAGS=			-Wall -Werror -Wextra -Iincludes/
 #------------------------------------
 
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		Bureaucrat.hpp
+INC_FILES=		Bureaucrat.hpp\
+				GradeTooHightException.hpp\
+				GradeTooLowException.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 

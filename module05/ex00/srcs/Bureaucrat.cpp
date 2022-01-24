@@ -37,24 +37,27 @@ unsigned short int Bureaucrat::getGrade() const {
 
 //------------Functions-----------
 void Bureaucrat::moveUpGrade() {
-	if (_grade > 1)
+	try
+	{
 		_grade--;
-	else
-		GradeTooHighException();
+		throw GradeTooHighException;
+	}
+	catch (GradeTooHighException const& e)
+	{
+		std::cout << "Your're already as high as you can be, enjoy." << std::endl;
+	}
 }
 
 void Bureaucrat::moveDownGrade() {
-	if (_grade < 150)
+	try
+	{
+		_grade > 150;
 		_grade++;
-	else
-		GradeTooLowException();
-}
-
-void Bureaucrat::GradeTooHighException() {
-	std::cout << "Your're already as high as you can be, enjoy." << std::endl;
-}
-
-void Bureaucrat::GradeTooLowException() {
-	std::cout << "Your're already as high as you can be, enjoy." << std::endl;
+		throw GradeTooLowException;
+	}
+	catch (GradeTooLowException const& e)
+	{
+		std::cout << "Your're already as low as you can be, soryy pal." << std::endl;
+	}
 }
 //-------------------------------

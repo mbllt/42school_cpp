@@ -4,18 +4,18 @@
 #include <iostream>
 #include <string>
 
-class Bureaucrat : public Bureaucrat {
+class GradeTooLowException {
 
 	protected:
 
 
 	public:
 		
-		Bureaucrat(void);
-		Bureaucrat(Bureaucrat const& cpy);
-		virtual ~Bureaucrat(void);
+		GradeTooLowException(void);
+		GradeTooLowException(GradeTooLowException const& cpy);
+		virtual ~GradeTooLowException(void);
 
-		Bureaucrat&			operator=(Bureaucrat const & src);
+		GradeTooLowException&			operator=(GradeTooLowException const & src);
 
 
 };
