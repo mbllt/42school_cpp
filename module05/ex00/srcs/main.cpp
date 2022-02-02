@@ -4,17 +4,17 @@
 
 int	main(void) {
 
-	Bureaucrat	Paul("Paul", 20);
+	Bureaucrat	Paul("Paul", -20000);
 	Bureaucrat	Fabrice("Fabrice", 150);
 
 	std::cout << "\n\n------------------------------\n\n";
 
-	Paul.display();
-	Fabrice.display();
+	std::cout << Fabrice;
+	std::cout << Paul;
 	Paul.moveUpGrade();
 	Fabrice.moveDownGrade();
-	Paul.display();
-	Fabrice.display();
+	std::cout << Fabrice;
+	std::cout << Paul;
 
 	std::cout << "\n\n------------------------------\n\n";
 	return (0);

@@ -6,7 +6,9 @@ NAME=			exceptions
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
 SRCS_FILES=		main.cpp\
-				Bureaucrat.cpp
+				Bureaucrat.cpp\
+				GradeTooLowException.cpp\
+				GradeTooHighException.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 #------------------------------------
 
@@ -19,14 +21,15 @@ OBJS=			$(addprefix $(OBJS_DIR)/,$(SRCS_FILES:.cpp=.o))
 
 #-------------- COMPILER-------------
 CC=				clang++
-# FLAGS=			-Wall -Werror -Wextra -Wshadow -Wno-shadow -Iincludes/
 FLAGS=			-Wall -Werror -Wextra -Iincludes/
 #------------------------------------
 
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		Bureaucrat.hpp
+INC_FILES=		Bureaucrat.hpp\
+				GradeTooLowException.hpp\
+				GradeTooHighException.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 
