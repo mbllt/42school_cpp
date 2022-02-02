@@ -4,7 +4,7 @@
 
 int	main(void) {
 
-	Bureaucrat	Paul("Paul", -20000);
+	Bureaucrat	Paul("Paul", 1);
 	Bureaucrat	Fabrice("Fabrice", 150);
 
 	std::cout << "\n\n------------------------------\n\n";
