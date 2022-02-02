@@ -1,8 +1,19 @@
 #include "Bureaucrat.hpp"
+#include <string>
+#include <stdexcept>
 
 //-----Constructors/Destructors----
-Bureaucrat::Bureaucrat(void) {
-	std::cout << "Constructing Bureaucrat." << std::endl;
+Bureaucrat::Bureaucrat(std::string const name, unsigned short int grade) : _name(name) {
+	std::cout << "Constructing Bureaucrat with name and grade." << std::endl;
+	try {
+			if (grade > 150 || grade < 1)
+				throw std::string("Invalid grade mate.");
+			_grade = grade;
+	}
+	catch (std::string const& e)
+	{
+		std::cout << e << std::endl;
+	}
 }
 
 Bureaucrat::Bureaucrat (Bureaucrat const& cpy) {
@@ -37,27 +48,32 @@ unsigned short int Bureaucrat::getGrade() const {
 
 //------------Functions-----------
 void Bureaucrat::moveUpGrade() {
-	try
-	{
+	try {
+		if (_grade < 2)
+			throw std::string(" is already as high as they can be.");
 		_grade--;
-		throw GradeTooHighException;
+		std::cout << "Moving up " << _name << "." << std::endl;
 	}
-	catch (GradeTooHighException const& e)
+	catch (std::string const& e)
 	{
-		std::cout << "Your're already as high as you can be, enjoy." << std::endl;
+		std::cout << _name << e << std::endl;
 	}
 }
 
 void Bureaucrat::moveDownGrade() {
-	try
-	{
-		_grade > 150;
+	try {
+		if (_grade > 149)
+			throw std::string(" is already as low as they can be.");
 		_grade++;
-		throw GradeTooLowException;
+		std::cout << "Moving down " << _name << "." << std::endl;
 	}
-	catch (GradeTooLowException const& e)
+	catch (std::string const& e)
 	{
-		std::cout << "Your're already as low as you can be, soryy pal." << std::endl;
+		std::cout << _name << e << std::endl;
 	}
+}
+
+void Bureaucrat::display() const {
+	std::cout << "Name : " << _name << " | Grade : " << _grade << std::endl;
 }
 //-------------------------------

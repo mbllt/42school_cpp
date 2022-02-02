@@ -26,9 +26,7 @@ FLAGS=			-Wall -Werror -Wextra -Iincludes/
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		Bureaucrat.hpp\
-				GradeTooHightException.hpp\
-				GradeTooLowException.hpp
+INC_FILES=		Bureaucrat.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 

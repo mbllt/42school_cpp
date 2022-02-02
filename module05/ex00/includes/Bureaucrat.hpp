@@ -3,9 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <stdexcept>
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
 
 class Bureaucrat {
 
@@ -17,7 +14,7 @@ class Bureaucrat {
 
 	public:
 		
-		Bureaucrat(void);
+		Bureaucrat(std::string const name, unsigned short int grade);
 		Bureaucrat(Bureaucrat const& cpy);
 		virtual ~Bureaucrat(void);
 
@@ -28,6 +25,7 @@ class Bureaucrat {
 
 		void				moveUpGrade();
 		void				moveDownGrade();
+		void				display() const;
 
 
 };
