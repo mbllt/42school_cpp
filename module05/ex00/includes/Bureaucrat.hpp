@@ -30,31 +30,65 @@ class Bureaucrat {
 
 			public :
 		
-				GradeTooHighException(std::string std);
-				virtual ~GradeTooHighException() throw();
+				GradeTooHighException(std::string std) throw() : _messageErr(std) {};
+				virtual ~GradeTooHighException() throw() {};
 		
-				virtual const char* what() const throw();
+				virtual const char* what() const throw() {
+					return _messageErr.c_str();
+				}
 		
 		
 			private :
 
 				std::string		_messageErr;
 		};
+
+		// class GradeTooHighException : public std::exception {
+
+		// 	public :
+		
+		// 		GradeTooHighException(std::string std) throw();
+		// 		virtual ~GradeTooHighException() throw();
+		
+		// 		virtual const char* what() const throw();
+		
+		
+		// 	private :
+
+		// 		std::string		_messageErr;
+		// };
 
 		class GradeTooLowException : public std::exception {
 
 			public :
 
-				GradeTooLowException(std::string std);
-				virtual ~GradeTooLowException() throw();
+				GradeTooLowException(std::string std) throw() : _messageErr(std) {};
+				virtual ~GradeTooLowException() throw() {};
 
-				virtual const char* what() const throw();
+				virtual const char* what() const throw() {
+					return _messageErr.c_str();
+				}
 
 
 			private :
 
 				std::string		_messageErr;
 		};
+
+		// class GradeTooLowException : public std::exception {
+
+		// 	public :
+
+		// 		GradeTooLowException(std::string std) throw();
+		// 		virtual ~GradeTooLowException() throw();
+
+		// 		virtual const char* what() const throw();
+
+
+		// 	private :
+
+		// 		std::string		_messageErr;
+		// };
 
 };
 

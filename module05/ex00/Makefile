@@ -6,9 +6,7 @@ NAME=			exceptions
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
 SRCS_FILES=		main.cpp\
-				Bureaucrat.cpp\
-				GradeTooLowException.cpp\
-				GradeTooHighException.cpp
+				Bureaucrat.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 #------------------------------------
 
@@ -27,9 +25,7 @@ FLAGS=			-Wall -Werror -Wextra -Iincludes/
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		Bureaucrat.hpp\
-				GradeTooLowException.hpp\
-				GradeTooHighException.hpp
+INC_FILES=		Bureaucrat.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 
