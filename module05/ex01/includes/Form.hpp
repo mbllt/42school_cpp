@@ -6,9 +6,17 @@
 
 class Form {
 
+	private :
+
+		std::string		_name;
+		bool			_signed;
+		int				_sign;
+		int				_exec;
+
+
 	public :
 
-		Form(void);
+		Form(std::string name, int sign, int exec);
 		Form(Form const& cpy);
 		virtual ~Form(void);
 
@@ -19,13 +27,39 @@ class Form {
 		int				getSign() const;
 		int				getExec() const;
 
+		class GradeTooHighException : public std::exception {
 
-	private :
+			public :
+		
+				GradeTooHighException(std::string std) throw() : _messageErr(std) {};
+				virtual ~GradeTooHighException() throw() {};
+		
+				virtual const char* what() const throw() {
+					return _messageErr.c_str();
+				}
+		
+		
+			private :
 
-		std::string		_name;
-		bool			_signed;
-		int				_sign;
-		int				_exec;
+				std::string		_messageErr;
+		};
+
+		class GradeTooLowException : public std::exception {
+
+			public :
+
+				GradeTooLowException(std::string std) throw() : _messageErr(std) {};
+				virtual ~GradeTooLowException() throw() {};
+
+				virtual const char* what() const throw() {
+					return _messageErr.c_str();
+				}
+
+
+			private :
+
+				std::string		_messageErr;
+		};
 
 };
 

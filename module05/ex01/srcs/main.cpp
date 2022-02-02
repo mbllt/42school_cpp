@@ -37,3 +37,6 @@ int	main(void) {
 	std::cout << "\n\n------------------------------\n\n";
 	return (0);
 }
+
+//	quand jai un grade invalide, je l'init au plus bas niveau, est-ce que je dois juste couper le programme ?
+//	quand je mets des valeurs neg ca peut 
