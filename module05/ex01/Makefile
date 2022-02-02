@@ -1,14 +1,12 @@
 #-------------- NAME-----------------
-NAME=			exceptions
+NAME=			larves!
 #------------------------------------
 
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
 SRCS_FILES=		main.cpp\
-				Bureaucrat.cpp\
-				GradeTooHighException.cpp\
-				GradeTooLowException.cpp
+				Bureaucrat.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 #------------------------------------
 
