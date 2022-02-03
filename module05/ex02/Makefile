@@ -9,8 +9,8 @@ SRCS_FILES=		main.cpp\
 				Bureaucrat.cpp\
 				AForm.cpp\
 				ShrubberyCreationForm.cpp\
-				RobotomyRequestForm.hpp\
-				PresidentialPardonForm.hpp
+				RobotomyRequestForm.cpp\
+				PresidentialPardonForm.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 #------------------------------------
 
@@ -32,8 +32,8 @@ INC_DIR=		includes
 INC_FILES=		Bureaucrat.hpp\
 				AForm.hpp\
 				ShrubberyCreationForm.hpp\
-				RobotomyRequestForm.cpp\
-				PresidentialPardonForm.cpp
+				RobotomyRequestForm.hpp\
+				PresidentialPardonForm.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 

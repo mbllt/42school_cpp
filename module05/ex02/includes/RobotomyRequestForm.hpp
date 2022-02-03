@@ -37,6 +37,21 @@ class RobotomyRequestForm : public AForm {
 				}
 		};
 
+		class NotRobotomisedException : public std::exception {
+			
+			private :
+				std::string	_messageErr;
+
+			public :
+				
+				NotRobotomisedException(std::string std) throw() : _messageErr(std) {};
+				virtual ~NotRobotomisedException() throw() {};
+		
+				virtual const char* what() const throw() {
+					return _messageErr.c_str();
+				}
+		};
+
 };
 
 std::ostream&	operator<<(std::ostream& o, RobotomyRequestForm const & src);

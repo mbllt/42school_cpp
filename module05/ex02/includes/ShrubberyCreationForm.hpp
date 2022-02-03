@@ -37,6 +37,21 @@ class ShrubberyCreationForm : public AForm {
 				}
 		};
 
+		class FileNotOpened : public std::exception {
+			
+			private :
+				std::string _messageErr;
+
+			public :
+				
+				FileNotOpened(std::string std) throw() : _messageErr(std) {};
+				virtual ~FileNotOpened() throw() {};
+		
+				virtual const char* what() const throw() {
+					return _messageErr.c_str();
+				}
+		};
+
 };
 
 std::ostream&	operator<<(std::ostream& o, ShrubberyCreationForm const & src);

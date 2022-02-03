@@ -64,7 +64,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		File.close();
 	}
 	else
-		std::cout << "Error : File could not be opened." << std::endl;
+		throw FileNotOpened("Error : File could not be opened.");
 	executor.executeForm(*this);
 }
 //--------------------------------
