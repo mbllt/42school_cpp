@@ -3,10 +3,10 @@
 //-----Constructors/Destructors----
 Form::Form(std::string name, int sign, int exec) : _name(name), _signed(false) {
 	if (sign < 1 || exec < 1) {
-		throw GradeTooHighException("Grade too high for sign or exec actions.");
+		throw GradeTooHighException("Grade too high to assign.");
 	}
 	if (sign > 150 || exec > 150) {
-		throw GradeTooLowException("Grade too low for sign or exec actions.");
+		throw GradeTooLowException("Grade too low to assign.");
 	}
 	std::cout << "Constructing Form." << std::endl;
 	_sign = sign;
@@ -28,9 +28,12 @@ Form & Form::operator=(Form const & src) {
 	return *this;
 }
 std::ostream& operator<<(std::ostream& o, Form const & src) {
-	o << src.getName() << ", form signed " << src.getSigned()
-		<< ", grade to sign " << src.getSign() << ", grade to exec "
-		<< src.getExec() << "." << "\n";
+	o << src.getName();
+	if (src.getSigned() == true)
+		o << ", form signed ";
+	else
+		o << ", from not signed ";
+	o << ", grade to sign " << src.getSign() << ", grade to exec " << src.getExec() << "." << "\n";
 	return o;
 }
 //--------------------------------
@@ -55,6 +58,8 @@ int Form::getExec() const {
 
 //------------Functions-----------
 void Form::beSigned(Bureaucrat const & src) {
-
+	if (src.getGrade() > _sign)
+		throw GradeTooLowException("Grade too low to sign.");
+	_signed = true;
 }
 //--------------------------------

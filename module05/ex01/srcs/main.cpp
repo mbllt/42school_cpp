@@ -6,7 +6,7 @@
 int	main(void) {
 	try
 	{
-		std::cout << "\n\n------------------------------\n\n";
+		std::cout << "\n------------------------------\n\n";
 
 		Bureaucrat	Paul("Paul", 2);
 		Bureaucrat	Fabrice("Fabrice", 74);
