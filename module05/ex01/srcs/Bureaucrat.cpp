@@ -2,17 +2,10 @@
 
 //-----Constructors/Destructors----
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name) {
+	if (grade > 150 || grade < 1)
+		throw GradeTooLowException("Invalid grade.");
 	std::cout << "Constructing Bureaucrat." << std::endl;
-	try {
-			if (grade > 150 || grade < 1)
-				throw GradeTooLowException("Invalid grade.");
-			_grade = grade;
-	}
-	catch (std::exception const& e)
-	{
-		_grade = 150;
-		std::cout << "ERREUR : " << e.what() << std::endl;
-	}
+	_grade = grade;
 }
 Bureaucrat::Bureaucrat (Bureaucrat const& cpy) {
 	std:: cout << "Copy constructor called in Bureaucrat." << std::endl;
@@ -43,27 +36,23 @@ int Bureaucrat::getGrade() const {
 //--------------------------------
 //------------Functions-----------
 void Bureaucrat::moveUpGrade() {
-	try {
-		if (_grade < 2)
-			throw GradeTooHighException(" is already as high as they can be.");
-		_grade--;
-		std::cout << "Moving up " << _name << "." << std::endl;
-	}
-	catch (std::exception const& e)
-	{
-		std::cout << "ERREUR : " << _name << e.what() << std::endl;
-	}
+	if (_grade <= 1)
+		throw GradeTooHighException("The bureaucrat is already as high as they can be.");
+	_grade--;
+	std::cout << "Moving up " << _name << "." << std::endl;
 }
 void Bureaucrat::moveDownGrade() {
-	try {
-		if (_grade > 149)
-			throw GradeTooLowException(" is already as low as they can be.");
-		_grade++;
-		std::cout << "Moving down " << _name << "." << std::endl;
+	if (_grade >= 150)
+		throw GradeTooLowException("The bureaucrat is already as low as they can be.");
+	_grade++;
+	std::cout << "Moving down " << _name << "." << std::endl;
+}
+void Bureaucrat::signForm(Form const & form) const {
+	if (form.getSigned() == true) {
+		std::cout << _name << " signed " << form.getName() << "." << "\n";
 	}
-	catch (std::exception const& e)
-	{
-		std::cout << "ERREUR : " << _name << e.what() << std::endl;
+	else {
+		std::cout << _name << " couldnt sign " << form.getName() << " because grade insufficient." << "\n";
 	}
 }
 //-------------------------------

@@ -2,28 +2,15 @@
 
 //-----Constructors/Destructors----
 Form::Form(std::string name, int sign, int exec) : _name(name), _signed(false) {
+	if (sign < 1 || exec < 1) {
+		throw GradeTooHighException("Grade too high for sign or exec actions.");
+	}
+	if (sign > 150 || exec > 150) {
+		throw GradeTooLowException("Grade too low for sign or exec actions.");
+	}
 	std::cout << "Constructing Form." << std::endl;
-	try {
-		if (sign < 1 || exec < 1) {
-			throw GradeTooHighException("Grade too high for sign or exec actions.");
-			if (sign < 1)
-				_sign = 150;
-			if (exec < 1)
-				_exec = 150; // I wanna do that in this exception but how do i know in which one i am in ?
-		}
-		if (sign > 150 || exec > 150) {
-			throw GradeTooLowException("Grade too low for sign or exec actions.");
-			if (sign > 150)
-				_sign = 150;
-			if (exec > 150)
-				_exec = 150;
-		}
-		_sign = sign;
-		_exec = exec;
-	}
-	catch (std::exception & e) {
-		std::cout << "ERROR : " << e.what() << "\n";
-	}
+	_sign = sign;
+	_exec = exec;
 }
 Form::Form (Form const& cpy) {
 	std:: cout << "Copy constructor called in Form." << std::endl;
@@ -41,7 +28,9 @@ Form & Form::operator=(Form const & src) {
 	return *this;
 }
 std::ostream& operator<<(std::ostream& o, Form const & src) {
-	o << src.getName() << ", form signed " << src.getSigned() << ", grade to sign " << src.getSign() << ", grade to exec " << src.getExec() << "." << "\n";
+	o << src.getName() << ", form signed " << src.getSigned()
+		<< ", grade to sign " << src.getSign() << ", grade to exec "
+		<< src.getExec() << "." << "\n";
 	return o;
 }
 //--------------------------------
@@ -65,4 +54,7 @@ int Form::getExec() const {
 //--------------------------------
 
 //------------Functions-----------
-//-------------------------------
+void Form::beSigned(Bureaucrat const & src) {
+
+}
+//--------------------------------

@@ -6,7 +6,8 @@ NAME=			larves!
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
 SRCS_FILES=		main.cpp\
-				Bureaucrat.cpp
+				Bureaucrat.cpp\
+				Form.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 #------------------------------------
 
@@ -25,7 +26,8 @@ FLAGS=			-Wall -Werror -Wextra -Iincludes/
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		Bureaucrat.hpp
+INC_FILES=		Bureaucrat.hpp\
+				Form.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 
