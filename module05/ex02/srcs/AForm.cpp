@@ -1,69 +1,65 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
 //-----Constructors/Destructors----
-Form::Form(std::string name, int sign, int exec) : _name(name), _signed(false) {
+AForm::AForm(std::string name, int sign, int exec) : _name(name), _signed(false), _sign(0), _exec(0) {
 	if (sign < 1 || exec < 1) {
 		throw GradeTooHighException("Grade too high to assign.");
 	}
 	if (sign > 150 || exec > 150) {
 		throw GradeTooLowException("Grade too low to assign.");
 	}
-	std::cout << "Constructing Form." << std::endl;
+	std::cout << "Constructing AForm." << std::endl;
 	_sign = sign;
 	_exec = exec;
 }
-Form::Form (Form const& cpy) {
-	std:: cout << "Copy constructor called in Form." << std::endl;
+AForm::AForm (AForm const& cpy) {
+	std:: cout << "Copy constructor called in AForm." << std::endl;
 	*this = cpy;
 }
-Form::~Form(void) {
-	std::cout << "Destructing Form." << std::endl;
+AForm::~AForm(void) {
+	std::cout << "Destructing AForm." << std::endl;
 }
 //--------------------------------
 
 //-----------Operators------------
-Form & Form::operator=(Form const & src) {
+AForm & AForm::operator=(AForm const & src) {
 	std::cout << "Assignment operator called in Form." << std::endl;
 	(void)src;
 	return *this;
 }
-std::ostream& operator<<(std::ostream& o, Form const & src) {
+std::ostream& operator<<(std::ostream& o, AForm const & src) {
 	o << src.getName();
 	if (src.getSigned() == true)
 		o << ", form signed ";
 	else
-		o << ", from not signed ";
+		o << ", form not signed ";
 	o << ", grade to sign " << src.getSign() << ", grade to exec " << src.getExec() << "." << "\n";
 	return o;
 }
 //--------------------------------
 
 //--------Getters/Setters---------
-std::string Form::getName() const {
+std::string AForm::getName() const {
 	return _name;
 }
 
-int Form::getSigned() const {
+int AForm::getSigned() const {
 	return _signed;
 }
 
-int Form::getSign() const {
+int AForm::getSign() const {
 	return _sign;
 }
 
-int Form::getExec() const {
+int AForm::getExec() const {
 	return _exec;
 }
 //--------------------------------
 
 //------------Functions-----------
-void Form::beSigned(Bureaucrat const & src) {
+void AForm::beSigned(Bureaucrat const & src) {
 	if (src.getGrade() > _sign)
-	{
-		src.signForm(*this);
 		throw GradeTooLowException("Grade too low to sign.");
-	}
 	_signed = true;
-	src.signForm(*this);
 }
 //--------------------------------
