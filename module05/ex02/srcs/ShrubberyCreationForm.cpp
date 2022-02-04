@@ -2,7 +2,7 @@
 #include <fstream>
 
 //-----Constructors/Destructors----
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, std::string target) : AForm(name, 145, 137), _target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {
 	std::cout << "Constructor called in ShrubberyCreationForm." << std::endl;
 }
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& cpy) : AForm(cpy.getName(), cpy.getSign(), cpy.getExec()) {

@@ -1,7 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
 //-----Constructors/Destructors----
-PresidentialPardonForm::PresidentialPardonForm(std::string name, std::string target) : AForm(name, 25, 5), _target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target) {
 	std::cout << "Constructor called in PresidentialPardonForm." << std::endl;
 }
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& cpy) : AForm(cpy.getName(), cpy.getSign(), cpy.getExec()) {

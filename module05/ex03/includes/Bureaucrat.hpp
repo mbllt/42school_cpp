@@ -65,6 +65,21 @@ class Bureaucrat {
 				std::string		_messageErr;
 		};
 
+		class NotSignedException : public std::exception {
+			
+			private :
+				std::string	_messageErr;
+
+			public :
+				
+				NotSignedException(std::string std) throw() : _messageErr(std) {};
+				virtual ~NotSignedException() throw() {};
+		
+				virtual const char* what() const throw() {
+					return _messageErr.c_str();
+				}
+		};
+
 };
 
 std::ostream&		operator<<(std::ostream & o, Bureaucrat const & src);

@@ -1,5 +1,7 @@
 #include "Karen.hpp"
 
+//	switch - tableau de pointeur sur fonction
+
 int	main(int argc, char **argv)
 {
 	if (argc == 2)

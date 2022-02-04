@@ -1,18 +1,16 @@
 #include "Form.hpp"
 
 //-----Constructors/Destructors----
-Form::Form(std::string name, int sign, int exec) : _name(name), _signed(false) {
-	if (sign < 1 || exec < 1) {
+Form::Form(std::string name, int sign, int exec) : _name(name), _signed(false), _sign(sign), _exec(exec) {
+	if (_sign < 1 || _exec < 1) {
 		throw GradeTooHighException("Grade too high to assign.");
 	}
-	if (sign > 150 || exec > 150) {
+	if (_sign > 150 || _exec > 150) {
 		throw GradeTooLowException("Grade too low to assign.");
 	}
 	std::cout << "Constructing Form." << std::endl;
-	_sign = sign;
-	_exec = exec;
 }
-Form::Form (Form const& cpy) {
+Form::Form (Form const& cpy) : _sign(cpy.getSign()), _exec(cpy.getExec()) {
 	std:: cout << "Copy constructor called in Form." << std::endl;
 	*this = cpy;
 }

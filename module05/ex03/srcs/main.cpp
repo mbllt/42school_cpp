@@ -5,28 +5,34 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main(void) {
 	try
 	{
 		std::cout << "\n------------------------------\n\n";
 
-		Bureaucrat boss("BOSS", 1);
-		ShrubberyCreationForm Form1("Form1", "targetJardin");		
-		Form1.beSigned(boss);		// Form1 demande a boss pour etre signe
-		Form1.execute(boss);		// execute car form signer
-		
-		std::cout << "\n------------------------------\n\n";
-		
-		RobotomyRequestForm Form2("Form2", "targetPlante");
-		Form2.beSigned(boss);
-		Form2.execute(boss);
+		Intern someRandomIntern;
+		Bureaucrat boss("Boss", 1);
+		AForm* rrf;
 
-		std::cout << "\n------------------------------\n\n";
+		rrf = someRandomIntern.makeForm("ShrubberyCreationForm", "Bender");
+		rrf->beSigned(boss);
+		boss.executeForm(*rrf);
 
-		PresidentialPardonForm Form3("Form3", "targetPlanete");
-		Form3.beSigned(boss);
-		Form3.execute(boss);
+		std::cout << "\n\n------------------------------\n\n";
+
+		rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+		rrf->beSigned(boss);
+		boss.executeForm(*rrf);
+
+		std::cout << "\n\n------------------------------\n\n";
+
+		rrf = someRandomIntern.makeForm("PresidentialPardonForm", "Bender");
+		rrf->beSigned(boss);
+		boss.executeForm(*rrf);
+
+		delete rrf;
 
 		std::cout << "\n\n------------------------------\n\n";
 	}
@@ -40,5 +46,3 @@ int	main(void) {
 	}
 	return (0);
 }
-
-//	I might need to use executeForm in the main rather than execute

@@ -12,19 +12,19 @@ int	main(void) {
 		std::cout << "\n------------------------------\n\n";
 
 		Bureaucrat boss("BOSS", 1);
-		ShrubberyCreationForm Form1("Form1", "targetJardin");		
+		ShrubberyCreationForm Form1("targetJardin");		
 		Form1.beSigned(boss);
 		boss.executeForm(Form1);
 		
 		std::cout << "\n------------------------------\n\n";
 		
-		RobotomyRequestForm Form2("Form2", "targetPlante");
+		RobotomyRequestForm Form2("targetPlante");
 		Form2.beSigned(boss);
 		boss.executeForm(Form2);
 
 		std::cout << "\n------------------------------\n\n";
 
-		PresidentialPardonForm Form3("Form3", "targetPlanete");
+		PresidentialPardonForm Form3("targetPlanete");
 		Form3.beSigned(boss);
 		boss.executeForm(Form3);
 

@@ -14,28 +14,13 @@ class ShrubberyCreationForm : public AForm {
 
 	public :
 
-		ShrubberyCreationForm(std::string name, std::string target);
+		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const& cpy);
 		virtual ~ShrubberyCreationForm(void);
 
 		void	execute(Bureaucrat const & executor) const;
 
 		ShrubberyCreationForm&	operator=(ShrubberyCreationForm const & src);
-
-		class NotSignedException : public std::exception {
-			
-			private :
-				std::string	_messageErr;
-
-			public :
-				
-				NotSignedException(std::string std) throw() : _messageErr(std) {};
-				virtual ~NotSignedException() throw() {};
-		
-				virtual const char* what() const throw() {
-					return _messageErr.c_str();
-				}
-		};
 
 		class FileNotOpened : public std::exception {
 			

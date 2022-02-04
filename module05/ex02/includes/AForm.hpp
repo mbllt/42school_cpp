@@ -11,10 +11,10 @@ class AForm {
 
 	private :
 
-		std::string		_name;
-		bool			_signed;
-		int				_sign;
-		int				_exec;
+		std::string const	_name;
+		bool				_signed;
+		int const			_sign;
+		int const			_exec;
 
 
 	public :

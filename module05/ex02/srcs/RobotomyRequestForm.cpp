@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 //-----Constructors/Destructors----
-RobotomyRequestForm::RobotomyRequestForm(std::string name, std::string target) : AForm(name, 72, 45), _target(target) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {
 	std::cout << "Constructor called in RobotomyRequestForm." << std::endl;
 }
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& cpy) : AForm(cpy.getName(), cpy.getSign(), cpy.getExec()) {
@@ -40,8 +40,6 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	std::cout << "Brrrrr! Brrrr! Brrrr!" << std::endl;
 	srand (time(NULL));
 	int random = rand() % 2;
-	std::cout << "RANDOM : " << random << std::endl;
-	std::cout << random << std::endl;
 	if (!random) {
 		throw NotRobotomisedException("Couldnt be robotomised.");
 	}

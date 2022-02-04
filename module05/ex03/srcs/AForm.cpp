@@ -1,18 +1,16 @@
 #include "AForm.hpp"
 
 //-----Constructors/Destructors----
-AForm::AForm(std::string name, int sign, int exec) : _name(name), _signed(false), _sign(0), _exec(0) {
-	if (sign < 1 || exec < 1) {
+AForm::AForm(std::string name, int sign, int exec) : _name(name), _signed(false), _sign(sign), _exec(exec) {
+	if (_sign < 1 || _exec < 1) {
 		throw GradeTooHighException("Grade too high to assign.");
 	}
-	if (sign > 150 || exec > 150) {
+	if (_sign > 150 || _exec > 150) {
 		throw GradeTooLowException("Grade too low to assign.");
 	}
 	std::cout << "Constructing AForm." << std::endl;
-	_sign = sign;
-	_exec = exec;
 }
-AForm::AForm (AForm const& cpy) {
+AForm::AForm (AForm const& cpy) : _sign(cpy.getSign()), _exec(cpy.getExec()) {
 	std:: cout << "Copy constructor called in AForm." << std::endl;
 	*this = cpy;
 }

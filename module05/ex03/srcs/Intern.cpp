@@ -1,7 +1,7 @@
 #include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 //-----Constructors/Destructors----
 Intern::Intern(void) {
@@ -24,15 +24,28 @@ Intern & Intern::operator=(Intern const & src) {
 //--------------------------------
 
 //------------Functions-----------
+AForm* createShrubbery(std::string target) {
+	return new ShrubberyCreationForm(target);
+}
+AForm* createRobotomy(std::string target) {
+	return new RobotomyRequestForm(target);
+}
+AForm* createPresident(std::string target) {
+	return new PresidentialPardonForm(target);
+}
+AForm* createForm() {
+}
 AForm* Intern::makeForm(std::string formName, std::string target) const {
-	if (formName != "ShrubberyCreationForm" ||
-		formName != "RobotomyRequestForm" ||
-		formName != "PresidentialPardonForm")
-		throw FormNotExistentException("Form does not exist.");
-	if (formName == "ShrubberyCreationForm") {
-		ShrubberyCreationForm* newForm(formName, target);
-		return newForm;
-	}
-	std::cout << "Intern creates " << formName << "." << std::endl;
+	std::string form[3] {
+		"ShrubberyCreationForm",
+		"RobotomyRequestForm",
+		"PresidentialPardonForm"
+	};
+
+	int i = 0;
+	while (i < 3 && formName != form[i])
+		i++;
+
+	AForm* (*createForm)(form);
 }
 //--------------------------------

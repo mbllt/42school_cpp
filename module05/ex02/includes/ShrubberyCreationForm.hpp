@@ -14,7 +14,7 @@ class ShrubberyCreationForm : public AForm {
 
 	public :
 
-		ShrubberyCreationForm(std::string name, std::string target);
+		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const& cpy);
 		virtual ~ShrubberyCreationForm(void);
 
