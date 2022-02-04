@@ -60,7 +60,7 @@ void Bureaucrat::executeForm(AForm const & form) const {
 		std::cout << _name << " executed " << form.getName() << "." << "\n";
 	}
 	else {
-		std::cout << _name << " couldnt sign " << form.getName() << " because grade insufficient." << "\n";
+		std::cout << _name << " couldnt execute " << form.getName() << "." << "\n";
 	}
 }
 //-------------------------------

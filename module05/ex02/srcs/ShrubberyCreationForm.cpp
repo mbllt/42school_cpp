@@ -44,6 +44,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		executor.executeForm(*this);
 		throw GradeTooLowException("Grade too low to execute ShrubberyCreationForm.");
 	}
+	executor.executeForm(*this);
 	std::ofstream	File(_target + "_shrubbery");
 	if (File)
 	{
@@ -65,6 +66,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	}
 	else
 		throw FileNotOpened("Error : File could not be opened.");
-	executor.executeForm(*this);
 }
 //--------------------------------

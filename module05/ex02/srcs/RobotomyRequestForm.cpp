@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include <random>
 
 //-----Constructors/Destructors----
 RobotomyRequestForm::RobotomyRequestForm(std::string name, std::string target) : AForm(name, 72, 45), _target(target) {
@@ -43,7 +44,15 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 		executor.executeForm(*this);
 		throw GradeTooLowException("Grade too low to execute RobotomyRequestForm.");
 	}
-	// execute
 	executor.executeForm(*this);
+	std::cout << "Brrrrr! Brrrr! Brrrr!" << std::endl;
+	std::default_random_engine	generator;
+	std::uniform_int_distribution<int> distribution(0,2);	// ranodm doesnt work
+	int random = distribution(generator);
+	std::cout << random << std::endl;
+	if (!random) {
+		throw NotRobotomisedException("Couldnt be robotomised.");
+	}
+	std::cout << "Could be robotomised." << std::endl;
 }
 //--------------------------------

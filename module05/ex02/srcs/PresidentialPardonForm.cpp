@@ -43,7 +43,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 		executor.executeForm(*this);
 		throw GradeTooLowException("Grade too low to execute PresidentialPardonForm.");
 	}
-	// execute
 	executor.executeForm(*this);
+	std::cout << _target << " has been forgiven by Zaphod Beeblebrox." << std::endl;
 }
 //--------------------------------
