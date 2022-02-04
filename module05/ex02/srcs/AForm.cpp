@@ -43,7 +43,7 @@ std::string AForm::getName() const {
 	return _name;
 }
 
-int AForm::getSigned() const {
+bool AForm::getSigned() const {
 	return _signed;
 }
 

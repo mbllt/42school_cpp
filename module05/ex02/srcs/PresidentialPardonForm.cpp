@@ -35,15 +35,7 @@ std::ostream& operator<<(std::ostream& o, PresidentialPardonForm const & src) {
 
 //------------Functions-----------
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
-	if (!(this->getSigned())) {
-		executor.executeForm(*this);
-		throw NotSignedException("PresidentialPardonForm not signed.");
-	}
-	if (executor.getGrade() > this->getExec()) {
-		executor.executeForm(*this);
-		throw GradeTooLowException("Grade too low to execute PresidentialPardonForm.");
-	}
-	executor.executeForm(*this);
+	(void)executor;
 	std::cout << _target << " has been forgiven by Zaphod Beeblebrox." << std::endl;
 }
 //--------------------------------

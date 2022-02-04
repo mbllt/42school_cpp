@@ -22,21 +22,6 @@ class ShrubberyCreationForm : public AForm {
 
 		ShrubberyCreationForm&	operator=(ShrubberyCreationForm const & src);
 
-		class NotSignedException : public std::exception {
-			
-			private :
-				std::string	_messageErr;
-
-			public :
-				
-				NotSignedException(std::string std) throw() : _messageErr(std) {};
-				virtual ~NotSignedException() throw() {};
-		
-				virtual const char* what() const throw() {
-					return _messageErr.c_str();
-				}
-		};
-
 		class FileNotOpened : public std::exception {
 			
 			private :

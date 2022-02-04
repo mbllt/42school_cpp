@@ -1,4 +1,7 @@
 #include "Intern.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 //-----Constructors/Destructors----
 Intern::Intern(void) {
@@ -21,9 +24,15 @@ Intern & Intern::operator=(Intern const & src) {
 //--------------------------------
 
 //------------Functions-----------
-AForm* Intern::makeForm(std::string name, std::string target) const {
-	if (!target)	// dont know how to do that
+AForm* Intern::makeForm(std::string formName, std::string target) const {
+	if (formName != "ShrubberyCreationForm" ||
+		formName != "RobotomyRequestForm" ||
+		formName != "PresidentialPardonForm")
 		throw FormNotExistentException("Form does not exist.");
-	std::cout << "Intern creates " << name << "." << std::endl;	// name being the form
+	if (formName == "ShrubberyCreationForm") {
+		ShrubberyCreationForm* newForm(formName, target);
+		return newForm;
+	}
+	std::cout << "Intern creates " << formName << "." << std::endl;
 }
 //--------------------------------

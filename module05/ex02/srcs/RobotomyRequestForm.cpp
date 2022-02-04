@@ -1,5 +1,5 @@
 #include "RobotomyRequestForm.hpp"
-#include <random>
+#include <stdlib.h>
 
 //-----Constructors/Destructors----
 RobotomyRequestForm::RobotomyRequestForm(std::string name, std::string target) : AForm(name, 72, 45), _target(target) {
@@ -36,19 +36,11 @@ std::ostream& operator<<(std::ostream& o, RobotomyRequestForm const & src) {
 
 //------------Functions-----------
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-	if (!(this->getSigned())) {
-		executor.executeForm(*this);
-		throw NotSignedException("RobotomyRequestForm not signed.");
-	}
-	if (executor.getGrade() > this->getExec()) {
-		executor.executeForm(*this);
-		throw GradeTooLowException("Grade too low to execute RobotomyRequestForm.");
-	}
-	executor.executeForm(*this);
+	(void)executor;
 	std::cout << "Brrrrr! Brrrr! Brrrr!" << std::endl;
-	std::default_random_engine	generator;
-	std::uniform_int_distribution<int> distribution(0,2);	// ranodm doesnt work
-	int random = distribution(generator);
+	srand (time(NULL));
+	int random = rand() % 2;
+	std::cout << "RANDOM : " << random << std::endl;
 	std::cout << random << std::endl;
 	if (!random) {
 		throw NotRobotomisedException("Couldnt be robotomised.");

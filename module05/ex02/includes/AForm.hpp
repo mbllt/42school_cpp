@@ -26,7 +26,7 @@ class AForm {
 		AForm&			operator=(AForm const & src);
 
 		std::string		getName() const;
-		int				getSigned() const;
+		bool			getSigned() const;
 		int				getSign() const;
 		int				getExec() const;
 
