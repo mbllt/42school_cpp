@@ -7,13 +7,15 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
+//	tableaux de pointeurs sur fonctions
+
 int	main(void) {
 	try
 	{
 		std::cout << "\n------------------------------\n\n";
 
 		Intern someRandomIntern;
-		Bureaucrat boss("Boss", 1);
+		Bureaucrat boss("Boss", 75);
 		AForm* rrf;
 
 		rrf = someRandomIntern.makeForm("ShrubberyCreationForm", "Bender");
@@ -37,7 +39,7 @@ int	main(void) {
 		std::cout << "\n\n------------------------------\n\n";
 	}
 	catch (const ShrubberyCreationForm::GradeTooLowException& e) {
-		std::cerr << "Catched a GradeTooLowException from ShrubberyCreationForm: " << '\n';
+		std::cerr << "Catched a GradeTooLowException : " << '\n';
 		std::cerr << e.what() << '\n';
 	}
 	catch(const std::exception& e)

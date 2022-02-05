@@ -2,6 +2,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <stdio.h>			// do I need it ?
 
 //-----Constructors/Destructors----
 Intern::Intern(void) {
@@ -33,10 +34,8 @@ AForm* createRobotomy(std::string target) {
 AForm* createPresident(std::string target) {
 	return new PresidentialPardonForm(target);
 }
-AForm* createForm() {
-}
 AForm* Intern::makeForm(std::string formName, std::string target) const {
-	std::string form[3] {
+	std::string form[3] = {
 		"ShrubberyCreationForm",
 		"RobotomyRequestForm",
 		"PresidentialPardonForm"
@@ -45,7 +44,11 @@ AForm* Intern::makeForm(std::string formName, std::string target) const {
 	int i = 0;
 	while (i < 3 && formName != form[i])
 		i++;
+	
+	AForm* (*tab[])(std::string target) = {createShrubbery, createRobotomy, createPresident};
 
-	AForm* (*createForm)(form);
+	if (i == 3)
+		throw FormNotExistentException("The form requested does not exist.");
+	return tab[i](target);
 }
 //--------------------------------

@@ -36,7 +36,7 @@ int	main(void) {
 		std::cout << "\n\n------------------------------\n\n";
 	}
 	catch (const Form::GradeTooLowException& e) {
-		std::cerr << "Catched a GradeTooLowException from Form: " << '\n';
+		std::cerr << "Catched a GradeTooLowException : " << '\n';
 		std::cerr << e.what() << '\n';
 	}
 	catch(const std::exception& e)

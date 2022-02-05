@@ -56,6 +56,7 @@ int AForm::getExec() const {
 
 //------------Functions-----------
 void AForm::beSigned(Bureaucrat const & src) {
+	// std::cout << "HERE !!!!! grade : " << src.getGrade() << " sign : " << _sign << std::endl;
 	if (src.getGrade() > _sign)
 		throw GradeTooLowException("Grade too low to sign.");
 	_signed = true;

@@ -32,7 +32,7 @@ int	main(void) {
 		std::cout << "\n\n------------------------------\n\n";
 	}
 	catch (const Bureaucrat::GradeTooLowException& e) {
-		std::cerr << "Catched a GradeTooLowException from Bureaucrat : " << '\n';
+		std::cerr << "Catched a GradeTooLowException : " << '\n';
 		std::cerr << e.what() << '\n';
 	}
 	catch(const std::exception& e)
