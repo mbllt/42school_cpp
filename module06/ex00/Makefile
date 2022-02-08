@@ -5,7 +5,9 @@ NAME=			scalaire
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
-SRCS_FILES=		main.cpp
+SRCS_FILES=		main.cpp\
+				parsing.cpp\
+				convert.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 #------------------------------------
 
@@ -24,7 +26,8 @@ FLAGS=			-Wall -Werror -Wextra  -std=c++98 -Iincludes/
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		InvalidInputException.hpp
+INC_FILES=		InvalidInputException.hpp\
+				scalaire.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 
