@@ -21,6 +21,7 @@ OBJS=			$(addprefix $(OBJS_DIR)/,$(SRCS_FILES:.cpp=.o))
 #-------------- COMPILER-------------
 CC=				clang++
 FLAGS=			-Wall -Werror -Wextra  -std=c++98 -Iincludes/
+#FLAGS=			-Wall -Werror -Wextra -Iincludes/
 #------------------------------------
 
 

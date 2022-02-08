@@ -34,7 +34,7 @@
 //		Dynamic Cast :
 //			- le seul cast qui se fait au runtime, à l'éxécution donc,
 //				ça peut compiler et péter pendant l'éxécution.
-//			- on peut l'utiliser que dans le cas dd'une instance polymorphisme :
+//			- on peut l'utiliser que dans le cas d'une instance polymorphisme :
 //				au moins une des fonctions membres virtual.
 //			- on l'utilse que en down cast, il va vérifier qu'on peut le faire.
 //
@@ -87,6 +87,7 @@ int	main(int argc, char **argv) {
 			throw InvalidInputException("Number of args invalid.");
 		t_type type = parsing(argv[1]);
 		displayType(type);
+		std::cout << "\n-------------------------------\n" << std::endl;
 		convert(argv[1], type);
 	}
 	catch (const std::exception& e) {

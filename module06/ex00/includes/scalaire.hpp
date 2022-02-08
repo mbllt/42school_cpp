@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <cstdlib>
 #include "InvalidInputException.hpp"
 
 typedef enum e_type {
