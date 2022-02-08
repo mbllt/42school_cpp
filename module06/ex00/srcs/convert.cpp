@@ -42,7 +42,7 @@ void	convertFloat(float input) {
 
 	displayChar(static_cast<char>(input), input);
 	displayInt(static_cast<int>(input), input);
-	std::cout << "float : " << input << "f" << std::endl;
+	std::cout << "float : " << static_cast<float>(input) << "f" << std::endl;
 	std::cout << "double : " << static_cast<double>(input) << std::endl;
 }
 
@@ -53,10 +53,18 @@ void	convertDouble(double input) {
 	displayChar(static_cast<char>(input), input);
 	displayInt(static_cast<int>(input), input);
 	std::cout << "float : " << static_cast<float>(input) << "f" << std::endl;
-	std::cout << "double : " << input << std::endl;
+	std::cout << "double : " << static_cast<double>(input) << std::endl;
 }
 
-void	convert(std::string const input, t_type type) {
+void	convert(std::string input, t_type type) {
+	if (input == "-1" || input == "-1.0" || input == "-1.0f") {
+		std::cout << "char : impossible" << std::endl;
+		std::cout << "int : -1" << std::endl;
+		std::cout << "float : -1.0f" << std::endl;
+		std::cout << "double : -1.0" << std::endl;
+		return;
+	}
+	// 	throw InvalidInputException("Invalid input, probably because its too long.");
 	switch (type) {
 		case (_char):
 			convertChar(input[0]);

@@ -30,7 +30,7 @@ bool	parse_double(std::string input) {
 	while (i++ < input.size())
 		if (!isdigit(input[i]))
 			break;
-	if (input[i] != '.')
+	if (input[i] != '.' || !input[i + 1])
 		return false;
 	while (++i < input.size())
 		if (!isdigit(input[i]))
@@ -48,7 +48,7 @@ bool	parse_float(std::string input) {
 	while (i++ < input.size())
 		if (!isdigit(input[i]))
 			break;
-	if (input[i] != '.')
+	if (input[i] != '.' || !input[i + 1])
 		return false;
 	while (++i < input.size())
 		if (!isdigit(input[i]))
