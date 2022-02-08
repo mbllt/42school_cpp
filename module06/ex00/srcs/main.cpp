@@ -87,7 +87,7 @@ int	main(int argc, char **argv) {
 			throw InvalidInputException("Number of args invalid.");
 		t_type type = parsing(argv[1]);
 		displayType(type);
-		// convert(argv[1], type);
+		convert(argv[1], type);
 	}
 	catch (const std::exception& e) {
 		std::cerr << e.what() << std::endl;

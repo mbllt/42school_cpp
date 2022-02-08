@@ -9,7 +9,7 @@ bool	parse_char(std::string input) {
 bool	parse_int(std::string input) {
 	size_t i = 0;
 
-	if (input[i] == '-') {
+	if (input[i] == '-' || input[i] == '+') {
 		i++;
 		if (!input[i])
 			return false;
@@ -23,7 +23,9 @@ bool	parse_int(std::string input) {
 bool	parse_double(std::string input) {
 	size_t i = 0;
 
-	if (input[i] == '-')
+	if (input == "-inf" || input == "+inf" || input == "nan")
+		return true;
+	if (input[i] == '-' || input[i] == '+')
 		i++;
 	while (i++ < input.size())
 		if (!isdigit(input[i]))
@@ -39,7 +41,9 @@ bool	parse_double(std::string input) {
 bool	parse_float(std::string input) {
 	size_t i = 0;
 
-	if (input[i] == '-')
+	if (input == "-inff" || input == "+inff" || input == "nanf")
+		return true;
+	if (input[i] == '-' || input[i] == '+')
 		i++;
 	while (i++ < input.size())
 		if (!isdigit(input[i]))
