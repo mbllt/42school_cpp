@@ -39,7 +39,7 @@
 //			- on l'utilse que en down cast, il va vérifier qu'on peut le faire.
 //
 //		Reinterpret cast :
-//			- ultra permissif : reinterpreter n'importe quellle addresse
+//			- ultra permissif : reinterpreter n'importe quelle addresse
 //				vers n'importe quelle autre adresse. Attention.
 //
 //		Const Cast :

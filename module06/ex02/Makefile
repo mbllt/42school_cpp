@@ -1,12 +1,11 @@
 #-------------- NAME-----------------
-NAME=			exceptions
+NAME=			type
 #------------------------------------
 
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
-SRCS_FILES=		main.cpp\
-				Bureaucrat.cpp
+SRCS_FILES=		main.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 #------------------------------------
 
@@ -19,13 +18,13 @@ OBJS=			$(addprefix $(OBJS_DIR)/,$(SRCS_FILES:.cpp=.o))
 
 #-------------- COMPILER-------------
 CC=				clang++
-FLAGS=			-Wall -Werror -Wextra -Iincludes/
+FLAGS=			-Wall -Werror -Wextra  -std=c++98 -Iincludes/
 #------------------------------------
 
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		Bureaucrat.hpp
+INC_FILES=		
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 

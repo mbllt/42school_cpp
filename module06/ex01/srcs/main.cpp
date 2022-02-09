@@ -27,5 +27,9 @@ int	main(void) {
 	std::cout << "dest name : " << dest->name
 		<< ", dest age : " << dest->age << std::endl;
 	std::cout << "dest addr : " << dest << std::endl;
+	if (&src == dest)
+		std::cout << "	SUCCESS" << std::endl;
+	else
+		std::cout << "	FAILURE" << std::endl;
 	return 0;
 }

@@ -64,7 +64,6 @@ void	convert(std::string input, t_type type) {
 		std::cout << "double : -1.0" << std::endl;
 		return;
 	}
-	// 	throw InvalidInputException("Invalid input, probably because its too long.");
 	switch (type) {
 		case (_char):
 			convertChar(input[0]);
