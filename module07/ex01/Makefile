@@ -1,5 +1,5 @@
 #-------------- NAME-----------------
-NAME=			type
+NAME=			iter
 #------------------------------------
 
 
@@ -24,7 +24,7 @@ FLAGS=			-Wall -Werror -Wextra  -std=c++98 -Iincludes/
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		whatever.hpp
+INC_FILES=		#iter.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 
