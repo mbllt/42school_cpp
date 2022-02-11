@@ -22,7 +22,7 @@ class Array {
 		}
 
 	public :
-		Array() : _size(0) {_tab = new T;}	// do i malloc ?
+		Array() : _tab(NULL), _size(0) {}
 		Array(unsigned int n) : _size(n) {_tab = new T[n];}
 		Array(Array const & cpy) {_copy(cpy);}
 		~Array() {_delete();};

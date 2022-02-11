@@ -27,6 +27,9 @@ void	incrementArray(Array<int> & arr) {
 
 int	main(void) {
 
+	Array<int> testbis;
+	(void)testbis;
+
 	Array<int>	src(5);
 	for (unsigned int i = 0; i < src.size(); i++)
 		src[i] = i;
