@@ -22,7 +22,7 @@ class Array {
 		}
 
 	public :
-		Array() : _tab(NULL), _size(0) {}
+		Array() : _size(0) {_tab = new T[]}
 		Array(unsigned int n) : _size(n) {_tab = new T[n];}
 		Array(Array const & cpy) {_copy(cpy);}
 		~Array() {_delete();};
