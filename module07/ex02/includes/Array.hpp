@@ -8,37 +8,43 @@ template<typename T>
 class Array {
 	private :
 		T *				_tab;
-		unsigned int	_n;
+		unsigned int	_size;
+
+		void	_delete() {
+			delete [] _tab;
+		}
+
+		void	_copy(Array const & copy) {
+			_tab = new T[copy._size];
+			_size = copy._size;
+			for (unsigned int i = 0; i < _size; i++)
+				_tab[i] = copy._tab[i];
+		}
 
 	public :
-		Array() : _n(0) {_tab = new T;_tab = NULL;}
-		Array(unsigned int n) : _n(n) {_tab = new T[n]; ft_bzero();}
-		Array(Array const & cpy) {*this = cpy;}
-		~Array() {delete [] _tab;};
+		Array() : _size(0) {_tab = new T;}	// do i malloc ?
+		Array(unsigned int n) : _size(n) {_tab = new T[n];}
+		Array(Array const & cpy) {_copy(cpy);}
+		~Array() {_delete();};
 
 		Array & operator=(Array const & src) {
-			_tab = new T[src.size()];
-			_n = src._n;
-			for (unsigned int i = 0; i < _n; i++)
-				_tab[i] = src._tab[i];
+			_delete();
+			_copy(src);
 			return *this;
 			}
 		
 		T & operator[](const unsigned int index) {
-			if (index >= this->size())
+			if (index >= this->_size)
 				throw AccessorArrayInvalidExcpetion("Index to access array is invalid.");
 			return _tab[index];
 		}
 
-		unsigned int	size() const {return _n;}
-
-		void	ft_bzero() {for (unsigned int i = 0; i < _n; i++) _tab[i] = 0;}
-
-		void	display(const unsigned int index) const {
-			if (index >= this->size())
-				throw AccessorArrayInvalidExcpetion("Index to access array is invalid.");
-			std::cout << _tab[index] << " ";
+		T const & operator[](const unsigned int index) const {
+			T & ret = const_cast<Array &>(*this).operator[](index);
+			return const_cast<T const &>(ret);
 		}
+
+		unsigned int	size() const {return _size;}
 
 		class AccessorArrayInvalidExcpetion : public std::exception {
 		

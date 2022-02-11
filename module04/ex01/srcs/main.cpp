@@ -55,7 +55,6 @@ int	main(void) {
 	std::cout << "Copy2:" << std::endl;
 	cpy2.getBrain()->displayIdeas();
 	std::cout << "\n";
-
 	return (0);
 }
 

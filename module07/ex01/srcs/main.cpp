@@ -12,8 +12,7 @@
 //
 //	1. Mon template GÉNÉRIQUE est ok car je déclare mes T muables. D'ailleurs,
 //			il est aussi ok pour le cas 4 car la converison peut se faire de
-//			manière implicite. Mais comme j'ai un template spécialisé le cas 4
-//			ne passera pas par le template générique.
+//			manière implicite.
 //
 //	2. Ce cas de figure est impossible : on ne peut pas modifier des const.
 //
@@ -22,8 +21,7 @@
 //			en const pour que mes deux éléments T est le même type sinon ça
 //			n'aurait pas marché.
 //
-//	4. Mon template GÉNÉRIQUE est ok car il y a un const cast implicite qui se
-//			fait sur les le tableau et le fonction.
+//	4. Mon template GÉNÉRIQUE : il marche comme le premier cas.
 
 template <typename U>
 void	displayTab(U *tab, int const size) {

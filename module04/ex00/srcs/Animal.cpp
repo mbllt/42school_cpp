@@ -21,6 +21,7 @@ Animal::~Animal(void) {
 Animal & Animal::operator=(Animal const & src) {
 	std::cout << "Assignment operator called in Animal." << std::endl;
 	_type = "Animal";
+	(void)src;
 	return *this;
 }
 //--------------------------------
