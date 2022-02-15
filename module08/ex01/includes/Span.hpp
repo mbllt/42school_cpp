@@ -24,8 +24,8 @@ class Span {
 		Span & operator=(Span const & src);
 
 		void	addNumber(int add);
-		int		shortestSpan() const;
-		int		longestSpan() const;
+		int		shortestSpan();
+		int		longestSpan();
 
 		class SpanFullExcpetion : public std::exception {
 			private :
