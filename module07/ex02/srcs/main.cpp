@@ -27,8 +27,9 @@ void	incrementArray(Array<int> & arr) {
 
 int	main(void) {
 
-	Array<int> testbis;
-	(void)testbis;
+	std::cout << "test array constructor empty no leaks" << "\n";
+	Array<int>	testLeaks;
+	(void)testLeaks;
 
 	Array<int>	src(5);
 	for (unsigned int i = 0; i < src.size(); i++)
@@ -68,7 +69,7 @@ int	main(void) {
 
 	std::cout << "\n-----------------\n" << std::endl;
 
-	std::cout << "error invalid index" << "\n";
+	std::cout << "error invalid index test" << "\n";
 	try {
 		dest[50] = 2;
 	}

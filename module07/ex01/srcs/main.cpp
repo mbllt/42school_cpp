@@ -10,9 +10,9 @@
 //		3.tableau muable/fonction qui prend des éléments const.
 //		4.tableau const/fonction qui prend des éléments const.
 //
-//	1. Mon template GÉNÉRIQUE est ok car je déclare mes T muables. D'ailleurs,
-//			il est aussi ok pour le cas 4 car la converison peut se faire de
-//			manière implicite.
+//	1. Mon template GÉNÉRIQUE est ok car mes T sont tous les deux du meme type.
+//			D'ailleurs, il est aussi ok pour le cas 4 car la converison peut
+//			se faire de manière implicite.
 //
 //	2. Ce cas de figure est impossible : on ne peut pas modifier des const.
 //
@@ -43,17 +43,12 @@ void	plusOneFloat(float &nbr) {
 	nbr++;
 }
 
-void	plusOneFloatConst(const float &nbr) {
-	std::cout << "nbr : " << nbr << std::endl;
-}
-
 int	main(void) {
 
 	std::cout << "---------- INT ----------" << "\n\n";
-	int	tabInt[] = {1, 2, 3, 4, 5};
-	const int	tabIntConst[] = {1, 2, 3, 4, 5};
 	
 	std::cout << "\n--> Tableau muable/fonction qui prend des éléments muables : utilise le template générique :" << "\n";
+	int	tabInt[] = {1, 2, 3, 4, 5};
 	displayTab(tabInt, 5);
 	::iter(tabInt, 5, &plusOneInt);
 	displayTab(tabInt, 5);
@@ -62,6 +57,7 @@ int	main(void) {
 	::iter(tabInt, 5, &plusOneIntConst);
 
 	std::cout << "\n--> Tableau const/fonction qui prend des éléments const : utilise le template générique :" << "\n";
+	const int	tabIntConst[] = {1, 2, 3, 4, 5};
 	::iter(tabIntConst, 5, &plusOneIntConst);
 
 	std::cout << "\n--------- FLOAT ---------" << "\n\n";
