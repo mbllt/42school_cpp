@@ -1,30 +1,36 @@
 #include <iostream>
 #include <string>
-#include "whatever.hpp"
+#include "easyfind.hpp"
+#include <vector>
+
+template<typename T>
+void	displayContainer(T container) {
+	typename T::iterator iter;
+	for (iter = container.begin(); iter != container.end(); iter++)
+		std::cout << *iter << " ";
+	std::cout << std::endl;
+}
 
 int	main(void) {
 
-	int a = 2;
-	int b = 3;
+	int myInts[] = {16, 4, 54, 2, 74, 99};
+	std::vector<int> vec(myInts, myInts + sizeof(myInts) / sizeof(int));
+	int	ret = 0;
 
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	::swap( a, b );
-	std::cout << "swap (a, b)" << std::endl;
-	std::cout << "a = " << a << ", b = " << b << std::endl << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	try {
+		std::cout << "test found int :" << std::endl;
+		displayContainer(vec);
+		ret = ::easyfind(vec, 54);
+		std::cout << "ret : " << ret << std::endl;
 
-	std::cout << "\n-----------------------------\n" << std::endl;
+		std::cout << "-----------------------" << std::endl;
 
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	::swap(c, d);
-	std::cout << "swap (c, d)" << std::endl;
-	std::cout << "c = " << c << ", d = " << d << std::endl << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-
+		std::cout << "test int not found :" << std::endl;
+		ret = ::easyfind(vec, 14);
+		std::cout << "ret : " << ret << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
 }

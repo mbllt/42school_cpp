@@ -11,8 +11,7 @@ class Array {
 		unsigned int	_size;
 
 		void	_delete() {
-			if (_tab)
-				delete [] _tab;
+			delete [] _tab;
 		}
 
 		void	_copy(Array const & copy) {
@@ -23,7 +22,7 @@ class Array {
 		}
 
 	public :
-		Array() : _size(0) {_tab = NULL;}
+		Array() : _size(0) {_tab = new T[]}
 		Array(unsigned int n) : _size(n) {_tab = new T[n];}
 		Array(Array const & cpy) {_copy(cpy);}
 		~Array() {_delete();};

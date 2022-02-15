@@ -1,11 +1,12 @@
 #-------------- NAME-----------------
-NAME=			easyfind
+NAME=			span
 #------------------------------------
 
 
 #-------------- SRCS-----------------
 SRCS_DIR=		srcs
-SRCS_FILES=		main.cpp
+SRCS_FILES=		main.cpp\
+				Span.cpp
 SRCS=			$(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 #------------------------------------
 
@@ -24,7 +25,7 @@ FLAGS=			-Wall -Werror -Wextra  -std=c++98 -Iincludes/
 
 #-------------- INCS-----------------
 INC_DIR=		includes
-INC_FILES=		easyfind.hpp
+INC_FILES=		Span.hpp
 INCLUDES=		$(addprefix $(INC_DIR)/,$(INC_FILES))
 #------------------------------------
 
