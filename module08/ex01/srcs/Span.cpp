@@ -8,7 +8,6 @@ Span::Span(void) : _size(0) {
 Span::Span(unsigned int n) : _size(n) {
 }
 Span::Span(Span const& cpy) {
-	_copy(cpy);
 	*this = cpy;
 }
 Span::~Span(void) {
@@ -57,7 +56,7 @@ int Span::shortestSpan() {
 		}
 		it++;
 	}
-	return scale;
+	return (scale < 0 ? -scale : scale);
 }
 int Span::longestSpan() {
 	if (_tab.size() < 2)

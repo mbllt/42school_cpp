@@ -10,11 +10,11 @@ int	main(void) {
 		std::cout << "span full exception: " << std::endl;
 		// sp.addNumber(6);
 		// sp.addNumber(6);
-		sp.addNumber(6);
-		sp.addNumber(1);
-		sp.addNumber(-10);
-		sp.addNumber(9);
+		sp.addNumber(-60);
 		sp.addNumber(10);
+		// sp.addNumber(-10);
+		// sp.addNumber(9);
+		// sp.addNumber(10);
 		std::cout << "shortest span" << std::endl;
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << "longest span" << std::endl;

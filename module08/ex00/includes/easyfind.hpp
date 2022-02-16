@@ -22,7 +22,7 @@ class NumberNotFoundExcpetion : public std::exception {
 };
 
 // typename au debut car je veux preciser
-//	au compilateur que mon template aura
+//	au compilateur que mon T aura
 //	un type ::iterator.
 
 template<typename T>
