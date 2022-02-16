@@ -27,22 +27,22 @@ class Span {
 		int		shortestSpan();
 		int		longestSpan();
 
-		class SpanFullExcpetion : public std::exception {
+		class SpanFullException : public std::exception {
 			private :
 				std::string		_messageErr;
 			public :
-				SpanFullExcpetion(std::string std) throw() : _messageErr(std) {};
-				virtual ~SpanFullExcpetion() throw() {};
+				SpanFullException(std::string std) throw() : _messageErr(std) {};
+				virtual ~SpanFullException() throw() {};
 				virtual const char* what() const throw() {
 					return _messageErr.c_str();
 				}
 		};
-		class NoDistanceExcpetion : public std::exception {
+		class NoDistanceException : public std::exception {
 			private :
 				std::string		_messageErr;
 			public :
-				NoDistanceExcpetion(std::string std) throw() : _messageErr(std) {};
-				virtual ~NoDistanceExcpetion() throw() {};
+				NoDistanceException(std::string std) throw() : _messageErr(std) {};
+				virtual ~NoDistanceException() throw() {};
 				virtual const char* what() const throw() {
 					return _messageErr.c_str();
 				}

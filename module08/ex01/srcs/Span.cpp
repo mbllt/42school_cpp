@@ -2,12 +2,10 @@
 #include <string>
 #include "Span.hpp"
 
-//-----Constructors/Destructors----
+//-----Constructors/Destructor----
 Span::Span(void) : _size(0) {
-	// std::vector<int> _tab;
 }
 Span::Span(unsigned int n) : _size(n) {
-	// std::vector<int> _tab;
 }
 Span::Span(Span const& cpy) {
 	_copy(cpy);
@@ -36,12 +34,12 @@ Span & Span::operator=(Span const & src) {
 //------------Functions-----------
 void Span::addNumber(int add) {
 	if (_tab.size() >= _size)
-		throw SpanFullExcpetion("The span is full.");
+		throw SpanFullException("The span is full.");
 	_tab.push_back(add);
 }
 int Span::shortestSpan() {
 	if (_tab.size() < 2)
-		throw NoDistanceExcpetion("The number of numbers added is insufficient.");
+		throw NoDistanceException("The number of numbers added is insufficient.");
 	std::vector<int>::iterator	it = _tab.begin();
 	std::vector<int>::iterator itbis;
 	int scale = *it;
@@ -63,7 +61,7 @@ int Span::shortestSpan() {
 }
 int Span::longestSpan() {
 	if (_tab.size() < 2)
-		throw NoDistanceExcpetion("The number of numbers added is insufficient.");
+		throw NoDistanceException("The number of numbers added is insufficient.");
 	return *std::max_element(_tab.begin(), _tab.end()) \
 			- *std::min_element(_tab.begin(), _tab.end());
 }
